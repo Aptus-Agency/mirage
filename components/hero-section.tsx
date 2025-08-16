@@ -14,14 +14,15 @@ const HeroSection = () => {
         />
         <div className="image-overlay-dark" />
       </div>
+      {/* <div className='absolute inset-0 top-0 bg-surface/80'></div> */}
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
         <h1 className="text-hero text-foreground mb-6 animate-fade-in">
-          A tribute to Sicily
+          Transform Your Space with Premium Tiles & Bathroom Fixtures
         </h1>
         <p className="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto mb-8 leading-relaxed animate-slide-up">
-          Discover the timeless beauty of natural stone and artisanal craftsmanship
+          Mirage Tiles Ltd brings you the finest tiles, faucets, shower heads, and more, right here in Uganda.
         </p>
         <button className="btn-primary animate-slide-up">
           Explore Collection

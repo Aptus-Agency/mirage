@@ -70,12 +70,12 @@
   --container-2xl: 1400px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 @layer base {
   * {
@@ -106,7 +106,7 @@
 
   /* Typography System */
   .text-hero {
-    @apply text-6xl md:text-7xl lg:text-8xl font-display font-medium leading-[0.9] tracking-tight;
+    @apply text-6xl font-display font-medium leading-[0.9] tracking-tight;
   }
 
   .text-display {
