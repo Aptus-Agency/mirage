@@ -8,31 +8,31 @@ const parallaxSections = [
       id: "hero",
       title: "Mirage",
       subtitle: "Experience luxury design like never before",
-      backgroundImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
+      backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     },
     {
       id: "concept",
       title: "Our Concept",
       subtitle: "Where innovation meets timeless elegance",
-      backgroundImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000&auto=format&fit=crop",
+      backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236050/mirage/fsvhgkpwcyiyjfotr3j7.jpg",
     },
     {
       id: "citronello",
       title: "Citronello Collection",
       subtitle: "Discover our signature designs",
-      backgroundImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2000&auto=format&fit=crop",
+      backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg",
     },
     {
       id: "inspiration",
       title: "Inspiration",
       subtitle: "Drawing from nature's finest elements",
-      backgroundImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop",
+      backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236120/mirage/kcjgbhl4djak22xm6xw0.jpg",
     },
     {
       id: "collections",
       title: "Collections",
       subtitle: "Curated pieces for discerning tastes",
-      backgroundImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000&auto=format&fit=crop",
+      backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg",
     }
 ];
 
@@ -61,7 +61,7 @@ export default function ParallaxSection() {
                         className="sticky top-0 h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
                     >
                         <motion.div 
-                            className="text-center text-white z-10"
+                            className="absolute bottom-35 left-35 text-white z-10"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,7 +84,7 @@ export default function ParallaxSection() {
                                 {section.subtitle}
                             </motion.p>
                         </motion.div>
-                        <div className="absolute inset-0 bg-black/30" />
+                        <div className="absolute inset-0 bg-black/20" />
                     </motion.section>
                 );
             })}

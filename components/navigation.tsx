@@ -14,7 +14,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-border-subtle">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-mirage-red-muted backdrop-blur-md border-b border-border-subtle">
       <div className="container-luxury">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
@@ -33,7 +33,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium text-text-secondary hover:text-foreground transition-colors duration-300"
+                className="text-sm font-medium transition-colors duration-300"
               >
                 {item.label}
               </a>
@@ -42,7 +42,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -78,7 +78,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 text-text-secondary hover:text-foreground transition-colors duration-300"
+                className="block py-2 hover:text-white transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}

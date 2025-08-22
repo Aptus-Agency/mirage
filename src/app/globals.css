@@ -14,6 +14,11 @@
   --warm-stone: 35 20% 85%;
   --stone-dark: 35 15% 25%;
 
+  /* Mirage Custom Colors */
+  --mirage-red: 355 96% 43%;
+  --mirage-red-muted: 356 76% 37%;
+  --mirage-pink: 356 82% 74%;
+
   /* Interactive States */
   --hover: 25 15% 18%;
   --pressed: 25 20% 22%;
@@ -57,11 +62,16 @@
   --color-text-muted: hsl(var(--text-muted));
   --color-border: hsl(var(--border));
   --color-border-subtle: hsl(var(--border-subtle));
+
+  --color-mirage-red: hsl(var(--mirage-red));
+  --color-mirage-red-muted: hsl(var(--mirage-red-muted));
+  --color-mirage-pink: hsl(var(--mirage-pink));
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-geist-sans);
   --font-body: var(--font-geist-sans);
-  
+
   --shadow-card: var(--shadow-card);
   --shadow-luxury: var(--shadow-luxury);
 
@@ -302,11 +312,11 @@
   transform: translateY(15vh);
 }
 
-.parallax-background.up-scroll + .parallax-background {
+.parallax-background.up-scroll+.parallax-background {
   transform: translate3d(0, 30vh, 0);
 }
 
-.parallax-background.up-scroll + .parallax-background .parallax-content {
+.parallax-background.up-scroll+.parallax-background .parallax-content {
   transform: translateY(30vh);
 }
 
@@ -318,15 +328,23 @@
   transform: translateY(40vh);
 }
 
-.parallax-background.down-scroll + .parallax-background:not(.down-scroll) {
+.parallax-background.down-scroll+.parallax-background:not(.down-scroll) {
   transform: translate3d(0, -15vh, 0);
 }
 
-.parallax-background.down-scroll + .parallax-background:not(.down-scroll) .parallax-content {
+.parallax-background.down-scroll+.parallax-background:not(.down-scroll) .parallax-content {
   transform: translateY(15vh);
 }
 
 /* Z-index stacking */
-.parallax-background:nth-child(1) { z-index: 3; }
-.parallax-background:nth-child(2) { z-index: 2; }
-.parallax-background:nth-child(3) { z-index: 1; }
+.parallax-background:nth-child(1) {
+  z-index: 3;
+}
+
+.parallax-background:nth-child(2) {
+  z-index: 2;
+}
+
+.parallax-background:nth-child(3) {
+  z-index: 1;
+}
