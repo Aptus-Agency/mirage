@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 const Navigation = () => {
@@ -13,12 +14,17 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border-subtle">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md border-b border-border-subtle">
       <div className="container-luxury">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="text-xl font-display font-medium">
-            NATURALE
+          <div className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
+            <Image
+              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
+              alt="Logo"
+              fill
+              className="object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
