@@ -1,10 +1,7 @@
-import { useParallaxScroll } from "@/hooks/useParallaxScroll";
-import { useRef, useEffect } from "react";
-import CitronelloSection from "./citronello-section";
-import CollectionsSection from "./collectoins-section";
-import ConceptSection from "./concept-section";
-import HeroSection from "./hero-section";
-import InspirationSection from "./inspiration-section";
+'use client';
+
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const parallaxSections = [
     {
@@ -12,76 +9,85 @@ const parallaxSections = [
       title: "Mirage",
       subtitle: "Experience luxury design like never before",
       backgroundImage: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-      component: HeroSection
     },
     {
       id: "concept",
       title: "Our Concept",
       subtitle: "Where innovation meets timeless elegance",
       backgroundImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000&auto=format&fit=crop",
-      component: ConceptSection
     },
     {
       id: "citronello",
       title: "Citronello Collection",
       subtitle: "Discover our signature designs",
       backgroundImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=2000&auto=format&fit=crop",
-      component: CitronelloSection
     },
     {
       id: "inspiration",
       title: "Inspiration",
       subtitle: "Drawing from nature's finest elements",
       backgroundImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop",
-      component: InspirationSection
     },
     {
       id: "collections",
       title: "Collections",
       subtitle: "Curated pieces for discerning tastes",
       backgroundImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=2000&auto=format&fit=crop",
-      component: CollectionsSection
     }
-  ];
+];
 
 export default function ParallaxSection() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const { currentSlideNumber } = useParallaxScroll({
-        totalSlides: parallaxSections.length
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
     });
 
-
-    useEffect(() => {
-        if (containerRef.current) {
-            const backgrounds = containerRef.current.querySelectorAll('.parallax-background');
-
-            backgrounds.forEach((bg, index) => {
-                bg.classList.remove('up-scroll', 'down-scroll');
-
-                if (index < currentSlideNumber) {
-                    bg.classList.add('down-scroll');
-                } else if (index > currentSlideNumber) {
-                    bg.classList.add('up-scroll');
-                }
-            });
-        }
-    }, [currentSlideNumber]);
     return (
-        <div ref={containerRef} className="parallax-container">
-            {parallaxSections.map((section) => (
-                <section
-                    key={section.id}
-                    className="parallax-background"
-                    style={{
-                        backgroundImage: `url(${section.backgroundImage})`,
-                    }}
-                >
-                    <div className="parallax-content">
-                        <h1 className="parallax-title">{section.title}</h1>
-                        <p className="parallax-subtitle">{section.subtitle}</p>
-                    </div>
-                </section>
-            ))}
+        <div ref={containerRef} className="relative">
+            {parallaxSections.map((section, index) => {
+                const targetScale = 1 - ((parallaxSections.length - index) * 0.05);
+                const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
+                const y = useTransform(scrollYProgress, [0, 1], [0, -index * 100]);
+
+                return (
+                    <motion.section
+                        key={section.id}
+                        style={{ 
+                            scale,
+                            y,
+                            backgroundImage: `url(${section.backgroundImage})`,
+                        }}
+                        className="sticky top-0 h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center"
+                    >
+                        <motion.div 
+                            className="text-center text-white z-10"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <motion.h1 
+                                className="text-6xl md:text-8xl font-bold mb-4"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.4 }}
+                            >
+                                {section.title}
+                            </motion.h1>
+                            <motion.p 
+                                className="text-xl md:text-2xl max-w-2xl mx-auto"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: 0.6 }}
+                            >
+                                {section.subtitle}
+                            </motion.p>
+                        </motion.div>
+                        <div className="absolute inset-0 bg-black/30" />
+                    </motion.section>
+                );
+            })}
         </div>
-    )
+    );
 }
