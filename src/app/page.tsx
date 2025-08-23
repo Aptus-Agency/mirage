@@ -1,7 +1,7 @@
 'use client';
 
 import Navigation from "../../components/navigation";
-import ConceptSection from "../../components/concept-section";
+import AboutSection from "../../components/concept-section";
 import CitronelloSection from "../../components/citronello-section";
 import CollectionsSection from "../../components/collectoins-section";
 import ContactSection from "../../components/contact-section";
@@ -18,7 +18,7 @@ export default function Home() {
 
       <ParallaxSection />
 
-      <ConceptSection />
+      <AboutSection />
       <CitronelloSection />
       <InspirationSection />
       <CollectionsSection />
