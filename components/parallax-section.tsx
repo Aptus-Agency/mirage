@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useParallaxScroll } from "../src/hooks/useParallaxScroll";
 import {
     HeroContent,
     TilesSectionContent,
@@ -53,33 +53,59 @@ const parallaxSections = [
 
 export default function ParallaxSection() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
+    const { currentSlideNumber } = useParallaxScroll({
+        totalSlides: parallaxSections.length
     });
 
-    return (
-        <div ref={containerRef} className="relative">
-            {parallaxSections.map((section, index) => {
-                const targetScale = 1 - ((parallaxSections.length - index) * 0.05);
-                const scale = useTransform(scrollYProgress, [0, 1], [1, targetScale]);
-                const y = useTransform(scrollYProgress, [0, 1], [0, -index * 100]);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            document.body.style.overflow = 'hidden';
+            return () => {
+                document.body.style.overflow = '';
+            };
+        }
+    }, []);
 
-                return (
-                    <motion.section
-                        key={section.id}
-                        style={{
-                            scale,
-                            y,
-                            ...(!section.backgroundVideo && { backgroundImage: `url(${section.backgroundImage})` }),
-                        }}
-                        className="top-0 h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative overflow-hidden"
-                    >
-                        <section.Component section={section} />
-                        {!section.backgroundVideo && <div className="absolute inset-0 bg-black/20" />}
-                    </motion.section>
-                );
-            })}
+    useEffect(() => {
+        if (containerRef.current) {
+            const backgrounds = containerRef.current.querySelectorAll('.parallax-background');
+
+            backgrounds.forEach((bg, index) => {
+                bg.classList.remove('up-scroll', 'down-scroll');
+
+                if (index < currentSlideNumber) {
+                    bg.classList.add('down-scroll');
+                } else if (index > currentSlideNumber) {
+                    bg.classList.add('up-scroll');
+                }
+            });
+        }
+    }, [currentSlideNumber]);
+
+    return (
+        <div ref={containerRef} className="parallax-container">
+            {parallaxSections.map((section, index) => (
+                <section
+                    key={section.id}
+                    className="parallax-background"
+                    style={{
+                        ...(!section.backgroundVideo && { backgroundImage: `url(${section.backgroundImage})` }),
+                    }}
+                >
+                    {/* Video Background */}
+                    {section.backgroundVideo && (
+                        <video
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                        >
+                            <source src={section.backgroundVideo} type="video/mp4" />
+                        </video>
+                    )}
+                    <section.Component section={section} />
+                </section>
+            ))}
         </div>
     );
 }

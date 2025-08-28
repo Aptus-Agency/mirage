@@ -11,13 +11,10 @@ import ParallaxSection from "../../components/parallax-section";
 
 export default function Home() {
 
-
   return (
     <>
       <Navigation />
-
       <ParallaxSection />
-
       <AboutSection />
       <CitronelloSection />
       <InspirationSection />
