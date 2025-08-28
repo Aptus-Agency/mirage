@@ -363,3 +363,227 @@
   object-fit: cover;
   z-index: -1;
 }
+
+/* Hero Slider Styles */
+.hero-slider {
+  font-size: 62.5%;
+  user-select: none;
+}
+
+.hero-slider .slider-control {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 12%;
+  height: 100%;
+  transition: opacity 0.3s;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.hero-slider .slider-control.inactive:hover {
+  cursor: auto;
+}
+
+.hero-slider .slider-control:not(.inactive):hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.hero-slider .slider-pagination {
+  position: absolute;
+  z-index: 30;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  font-size: 0;
+  list-style-type: none;
+}
+
+.hero-slider .slider-pagination-elem {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+}
+
+.hero-slider .slider-pagination-elem::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.hero-slider .slider-pagination-elem.active::before,
+.hero-slider .slider-pagination-elem:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.hero-slider .slider {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+
+.hero-slider .slider.animating {
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
+.hero-slider .slider.animating .slide-bg {
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
+.hero-slider .slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hero-slider .slide.active .slide-overlay,
+.hero-slider .slide.active .slide-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hero-slider .slide-bg {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  will-change: transform;
+}
+
+.hero-slider .slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slider .slide-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  min-height: 810px;
+  transition: transform 0.5s 0.5s, opacity 0.2s 0.5s;
+  will-change: transform, opacity;
+  transform: translate3d(-20%, 0, 0);
+  opacity: 0;
+}
+
+.hero-slider .slide-overlay path {
+  opacity: 0.8;
+}
+
+.hero-slider .slide-text {
+  position: absolute;
+  width: 35%;
+  bottom: 15%;
+  left: 12%;
+  color: #fff;
+  transition: transform 0.5s 0.8s, opacity 0.5s 0.8s;
+  will-change: transform, opacity;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.hero-slider .slide-text-heading {
+  font-family: inherit;
+  margin-bottom: 2rem;
+}
+
+.hero-slider .slide-text-desc {
+  font-family: inherit;
+  margin-bottom: 1.5rem;
+}
+
+.hero-slider .slide-text-link {
+  z-index: 5;
+  display: inline-block;
+  position: relative;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.hero-slider .slide-text-link::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  transform-origin: 50% 100%;
+  transform: rotateX(-85deg);
+  transition: transform 0.3s;
+  will-change: transform;
+}
+
+.hero-slider .slide-text-link:hover::before {
+  transform: rotateX(0);
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 991px) {
+  .hero-slider .slide-overlay {
+    display: none;
+  }
+
+  .hero-slider .slide-text {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20rem;
+    text-align: center;
+    transform: translateY(50%);
+    transition: transform 0.5s 0.5s, opacity 0.5s 0.5s;
+    padding: 0 1rem;
+  }
+
+  .hero-slider .slide-text-heading {
+    line-height: 20rem;
+    font-size: 3.5rem;
+  }
+
+  .hero-slider .slide-text-desc {
+    display: none;
+  }
+
+  .hero-slider .slide-text-link {
+    display: none;
+  }
+}
+
+/* Transform utilities */
+.rotate-x-0 {
+  transform: rotateX(0deg);
+}
+
+.rotate-x-\[-85deg\] {
+  transform: rotateX(-85deg);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}

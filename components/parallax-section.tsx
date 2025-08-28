@@ -14,7 +14,7 @@ const parallaxSections = [
     {
         id: "hero",
         title: "Mirage Tiles",
-        subtitle: "Transform Your Space with Premium Tiles & Bathroom Fixtures",
+        subtitle: "Transform your space with our exquisite collection of ceramic tiles. From modern minimalist designs to classic patterns, find the perfect tiles for every room.",
         backgroundImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
         Component: HeroContent,
     },

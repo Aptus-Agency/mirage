@@ -3,22 +3,22 @@ import Image from 'next/image';
 const InspirationSection = () => {
   const inspirationItems = [
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236051/mirage/ekvs8vkbcijizqvv0uxy.jpg',
-      title: "Living Spaces",
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg',
+      title: "Indoor & Outdoor",
       description: "Modern comfort meets natural beauty",
       alt: "Modern luxury living room with natural stone feature wall"
     },
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236051/mirage/ekvs8vkbcijizqvv0uxy.jpg',
-      title: "Private Retreats",
-      description: "Intimate spaces for peaceful moments",
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg',
+      title: "Flooring Solutions",
+      description: "Seamless durability, timeless warmth",
       alt: "Elegant bedroom with natural stone headboard"
     },
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236051/mirage/ekvs8vkbcijizqvv0uxy.jpg',
-      title: "Culinary Environments",
+      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756416003/mirage/lc4oopinxjtqckrltt9s.jpg',
+      title: "Bathrooms",
       description: "Where gastronomy and design unite",
-      alt: "Modern kitchen with natural stone countertops"
+      alt: "Modern bathrooms with natural stone countertops"
     }
   ];
 
@@ -28,7 +28,7 @@ const InspirationSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-display text-foreground mb-6">
-            Get inspired
+            Shape Your Ideas
           </h2>
           <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
             Explore how natural materials transform living spaces into sanctuaries 
@@ -61,13 +61,6 @@ const InspirationSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <button className="btn-primary">
-            View All Projects
-          </button>
         </div>
       </div>
     </section>

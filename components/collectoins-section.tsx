@@ -1,22 +1,22 @@
 const CollectionsSection = () => {
     const collections = [
       {
-        title: "Sicilian Stone",
-        description: "Ancient limestone formations crafted for modern living",
-        features: ["Travertine", "Limestone", "Marble"],
-        accent: "Mediterranean"
+        title: "Metro Gloss",
+        description: "Timeless subway tiles with a luminous glaze",
+        features: ["75×150 & 75×300", "Gloss & Satin", "White, Bone, Sage, Ink", "Bullnose & corners"],
+        accent: "Subway Series"
       },
       {
-        title: "Volcanic Series",
-        description: "Raw power of nature transformed into architectural elements",
-        features: ["Lava Stone", "Basalt", "Pumice"],
-        accent: "Etna Collection"
+        title: "Terra Matte",
+        description: "Clay-inspired tones with a soft, tactile surface",
+        features: ["100×300 & 300×600", "Matte, anti-glare", "Sand, Terra, Smoke, Charcoal", "Rectified edges"],
+        accent: "Matte Essentials"
       },
       {
-        title: "Artisan Collection",
-        description: "Handcrafted pieces that celebrate traditional techniques",
-        features: ["Hand-carved", "Brushed Finish", "Custom Design"],
-        accent: "Limited Edition"
+        title: "Calacatta Silk",
+        description: "Marble-look surfaces with delicate veining",
+        features: ["300×600", "Silk & Polished", "P1–P3 veining variation", "50×50 mosaic"],
+        accent: "Marble Look"
       }
     ];
   
@@ -26,7 +26,7 @@ const CollectionsSection = () => {
           {/* Header */}
           <div className="mb-16">
             <h2 className="text-display text-foreground mb-6">
-              Our collections
+              Our Ceramic Tile collections
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl leading-relaxed">
               Each collection represents a unique journey through Sicily's geological heritage, 
@@ -63,7 +63,7 @@ const CollectionsSection = () => {
                   </div>
                   
                   <button className="btn-secondary">
-                    Explore Collection
+                    View Collection
                   </button>
                 </div>
               </div>
