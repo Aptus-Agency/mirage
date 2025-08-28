@@ -7,9 +7,9 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
+    { label: 'Home', href: '/' },
     { label: 'Collections', href: '#collections' },
-    { label: 'Concepts', href: '#concepts' },
-    { label: 'Inspiration', href: '#inspiration' },
+    { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -33,7 +33,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-sm font-medium transition-colors duration-300"
+                className="text-lg font-bold transition-colors duration-300 hover:underline"
               >
                 {item.label}
               </a>

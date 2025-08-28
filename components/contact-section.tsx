@@ -2,17 +2,17 @@ const ContactSection = () => {
     const contactInfo = [
       {
         label: "Email",
-        value: "info@naturale.com",
-        href: "mailto:info@naturale.com"
+        value: "info@miragetiles.com",
+        href: "mailto:info@miragetiles.com"
       },
       {
         label: "Phone",
-        value: "+39 095 123 4567",
-        href: "tel:+390951234567"
+        value: "+256 700 000 000",
+        href: "tel:+256700000000"
       },
       {
         label: "Showroom",
-        value: "Via Etnea 123, Catania, Sicily",
+        value: "Bugolobi - Kampala, Uganda",
         href: "#"
       }
     ];
