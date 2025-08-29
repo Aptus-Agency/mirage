@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 const Navigation = () => {
@@ -9,7 +10,7 @@ const Navigation = () => {
   const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Collections', href: '#collections' },
-    { label: 'About', href: '#about' },
+    { label: 'About', href: '/about' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -18,14 +19,14 @@ const Navigation = () => {
       <div className="container-luxury">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
+          <Link href="/" className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
             <Image
               src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
               alt="Logo"
               fill
               className="object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
