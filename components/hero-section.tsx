@@ -7,7 +7,8 @@ interface Slide {
   id: number;
   title: string;
   description: string;
-  link: string;
+  linkText: string;
+  linkUrl: string;
   bgImage: string;
   overlayColor: string;
 }
@@ -17,7 +18,8 @@ const slides: Slide[] = [
     id: 0,
     title: "Mirage Tiles",
     description: "Transform your space with our exquisite collection of ceramic tiles. From modern minimalist designs to classic patterns, find the perfect tiles for every room.",
-    link: "View Ceramic Collection",
+    linkText: "About Us",
+    linkUrl: "/about",
     bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     overlayColor: "rgb(233, 156, 126)"
   },
@@ -25,7 +27,8 @@ const slides: Slide[] = [
     id: 1,
     title: "Ceramic Tiles",
     description: "Transform your spaces with tiles that redefine elegance, functionality, and durability.",
-    link: "View Fixtures",
+    linkText: "Explore Collections",
+    linkUrl: "/#collections",
     bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     overlayColor: "rgb(225, 204, 174)"
   },
@@ -33,7 +36,8 @@ const slides: Slide[] = [
     id: 2,
     title: "Shower Heads",
     description: "Elevate your bathing experience with our premium shower heads.",
-    link: "View Stone Collection",
+    linkText: "Explore Products",
+    linkUrl: "/products/fixtures",
     bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     overlayColor: "rgb(173, 197, 205)"
   },
@@ -41,7 +45,8 @@ const slides: Slide[] = [
     id: 3,
     title: "Toilet Seats",
     description: "Elevate your bathing experience with our premium shower heads.",
-    link: "Book Consultation",
+    linkText: "Explore Products",
+    linkUrl: "/products/fixtures",
     bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     overlayColor: "rgb(203, 198, 195)"
   }
@@ -142,23 +147,6 @@ const HeroSection = () => {
         onClick={navigateRight}
       />
 
-      {/* Pagination */}
-      {/* <ul className="slider-pagination absolute z-30 left-1/2 bottom-8 transform -translate-x-1/2 flex list-none m-0 p-0">
-        {slides.map((_, index) => (
-          <li
-            key={index}
-            className={`slider-pagination-elem relative inline-block w-8 h-8 mx-2 rounded-full border-2 border-white cursor-pointer ${
-              index === currentSlide ? 'active' : ''
-            }`}
-            onClick={() => changeSlide(index)}
-          >
-            <div className={`absolute left-1/2 top-1/2 w-5 h-5 bg-white rounded-full transition-transform duration-300 transform -translate-x-1/2 -translate-y-1/2 ${
-              index === currentSlide ? 'scale-100' : 'scale-0 hover:scale-100'
-            }`} />
-          </li>
-        ))}
-      </ul> */}
-
       {/* Slider Container */}
       <div 
         className={`slider relative h-full ${
@@ -223,8 +211,8 @@ const HeroSection = () => {
                 <p className="font-normal text-lg mb-6 max-lg:hidden">
                   {slide.description}
                 </p>
-                <Link href={"/"} className="relative inline-block px-2 py-1 text-base bg-white text-black">
-                  <p className="relative z-10">{slide.link}</p>
+                <Link href={slide.linkUrl} className="btn-primary">
+                  {slide.linkText}
                 </Link>
               </div>
             </div>

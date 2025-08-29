@@ -23,7 +23,7 @@ const InspirationSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background" id="collections">
       <div className="container-luxury">
         {/* Header */}
         <div className="text-center mb-16">

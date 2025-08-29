@@ -21,7 +21,7 @@ const Navigation = () => {
       ]
     },
     { label: 'About', href: '/about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Contact', href: '/contact-us' },
   ];
 
   const dropdownVariants = {
@@ -39,14 +39,14 @@ const Navigation = () => {
       <div className="container-luxury">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <div className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
+          <Link href="/" className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
             <Image
               src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
               alt="Logo"
               fill
               className="object-contain"
             />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -152,14 +152,14 @@ const Navigation = () => {
                   </div>
                 </div>
               ) : (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="block py-2 hover:text-white transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="block py-2 hover:text-white transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
               )
             ))}
           </div>
