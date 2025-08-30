@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const ContactSection = () => {
     const contactInfo = [
       {
@@ -18,11 +20,24 @@ const ContactSection = () => {
     ];
   
     return (
-      <section id="contact" className="section-padding bg-background border-t border-border-subtle">
+      <motion.section 
+        id="contact" 
+        className="section-padding bg-background border-t border-border-subtle"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="container-luxury">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Info */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <h2 className="text-display text-foreground mb-8">
                 Get in touch
               </h2>
@@ -46,10 +61,16 @@ const ContactSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
   
             {/* Contact Form */}
-            <div className="card-luxury p-8">
+            <motion.div 
+              className="card-luxury p-8"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
@@ -97,10 +118,10 @@ const ContactSection = () => {
                   Send Message
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
     );
   };
   

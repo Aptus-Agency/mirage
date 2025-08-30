@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const CollectionsSection = () => {
     const collections = [
       {
@@ -21,10 +23,23 @@ const CollectionsSection = () => {
     ];
   
     return (
-      <section className="section-padding bg-surface">
+      <motion.section 
+        className="section-padding bg-surface"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         <div className="container-luxury">
           {/* Header */}
-          <div className="mb-16">
+          <motion.div 
+            className="mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <h2 className="text-display text-foreground mb-6">
               Our Ceramic Tile collections
             </h2>
@@ -32,12 +47,19 @@ const CollectionsSection = () => {
               Each collection represents a unique journey through Sicily's geological heritage, 
               transformed by master craftsmen into surfaces of extraordinary beauty and durability.
             </p>
-          </div>
+          </motion.div>
   
           {/* Collections Grid */}
           <div className="grid lg:grid-cols-3 gap-12">
             {collections.map((collection, index) => (
-              <div key={index} className="group">
+              <motion.div 
+                key={index} 
+                className="group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + (index * 0.1), ease: "easeOut" }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
                 <div className="card-luxury p-8 h-full">
                   <div className="mb-6">
                     <span className="text-small text-gold uppercase tracking-widest font-medium">
@@ -66,11 +88,11 @@ const CollectionsSection = () => {
                     View Collection
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
     );
   };
   

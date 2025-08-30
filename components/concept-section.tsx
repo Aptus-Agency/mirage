@@ -1,14 +1,28 @@
 import Image from 'next/image';
 import Button from './ui/Button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const AboutSection = () => {
   return (
-    <section className="section-padding bg-surface">
+    <motion.section 
+      className="section-padding bg-surface"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="container-luxury">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
-          <div className="relative group">
+          <motion.div 
+            className="relative group"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="overflow-hidden rounded-lg">
               <Image
                 src={'https://res.cloudinary.com/zurri-cloud/image/upload/v1755871559/mirage/ln1zgasvz0rpxfpbwdzb.jpg'}
@@ -18,10 +32,16 @@ const AboutSection = () => {
                 className="w-full h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-8"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div>
               <h2 className="text-display text-foreground mb-6">
                 About<span className="font-light"> Mirage</span>
@@ -40,10 +60,10 @@ const AboutSection = () => {
             <Button>
               <Link href={"/about"}>Discover More</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

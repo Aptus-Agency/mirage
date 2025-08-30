@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const ShapeYourIdeas = () => {
   const inspirationItems = [
@@ -26,10 +27,24 @@ const ShapeYourIdeas = () => {
   ];
 
   return (
-    <section className="section-padding bg-background" id="collections">
+    <motion.section 
+      className="section-padding bg-background" 
+      id="collections"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
       <div className="container-luxury">
         {/* Header */}
-        <div className="text-start mb-16">
+        <motion.div 
+          className="text-start mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h2 className="text-display text-foreground mb-6">
             Shape Your Ideas
           </h2>
@@ -37,12 +52,19 @@ const ShapeYourIdeas = () => {
             Explore how natural materials transform living spaces into sanctuaries
             of beauty and tranquility
           </p>
-        </div>
+        </motion.div>
 
         {/* Inspiration Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {inspirationItems.map((item, index) => (
-            <div key={index} className="group cursor-pointer">
+            <motion.div 
+              key={index} 
+              className="group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 + (index * 0.1), ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <div className="relative overflow-hidden rounded-lg mb-6">
                 <Image
                   src={item.image}
@@ -67,11 +89,11 @@ const ShapeYourIdeas = () => {
                   {item.accents}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
