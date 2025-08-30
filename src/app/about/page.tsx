@@ -1,8 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Navigation from '../../../components/navigation';
 import Footer from '../../../components/footer';
-import Image from 'next/image';
+import TimelineSection from '../../../components/timeline-section';
 
 const AboutPage = () => {
   return (
@@ -54,29 +55,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="section-padding bg-background">
-          <div className="container-luxury">
-            <h2 className="text-display text-center text-foreground mb-16">Milestones on Our Journey</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div className="p-8 border border-border-subtle rounded-lg">
-                <h3 className="text-heading mb-4">2014</h3>
-                <p className="text-body text-text-secondary">Launched our first nationwide tile-sample delivery service.</p>
-              </div>
-              <div className="p-8 border border-border-subtle rounded-lg">
-                <h3 className="text-heading mb-4">2016</h3>
-                <p className="text-body text-text-secondary">Expanded our product line to include luxury bathroom fixtures.</p>
-              </div>
-              <div className="p-8 border border-border-subtle rounded-lg">
-                <h3 className="text-heading mb-4">2018</h3>
-                <p className="text-body text-text-secondary">Introduced on-site 3D design consultations.</p>
-              </div>
-              <div className="p-8 border border-border-subtle rounded-lg">
-                <h3 className="text-heading mb-4">2021</h3>
-                <p className="text-body text-text-secondary">Opened a second showroom in Entebbe.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <TimelineSection />
 
         <section className="section-padding bg-surface">
           <div className="container-luxury text-center">
@@ -86,43 +65,35 @@ const AboutPage = () => {
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="card-luxury p-8">
-                <h3 className="text-heading mb-4">Local Empowerment</h3>
+                <h3 className="text-2xl font-bold mb-4">Local Empowerment</h3>
                 <p className="text-body text-text-secondary">We train and employ local craftsmen, sharing advanced tiling and plumbing techniques.</p>
               </div>
               <div className="card-luxury p-8">
-                <h3 className="text-heading mb-4">Community Support</h3>
+                <h3 className="text-2xl font-bold mb-4">Community Support</h3>
                 <p className="text-body text-text-secondary">We partner with NGOs to donate tiles and fixtures for community schools, clinics, and clean-water projects.</p>
               </div>
               <div className="card-luxury p-8">
-                <h3 className="text-heading mb-4">Sustainability</h3>
+                <h3 className="text-2xl font-bold mb-4">Sustainability</h3>
                 <p className="text-body text-text-secondary">We champion sustainable practices, recycling over 75% of our on-site waste and sourcing eco-friendly grout and adhesives.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section-padding bg-background">
+        <section className="section-padding bg-background text-center">
+          <div className="container-luxury mb-24">
+            <h2 className="text-display text-foreground mb-6">Our Mission</h2>
+            <p className="text-body text-text-secondary max-w-3xl mx-auto leading-relaxed mb-12">
+              Our mission is to offer durable, stylish tiles and fixtures that inspire your next project. We envision a future where every home and business in Uganda shines with spaces you love.
+            </p>
+          </div>
           <div className="container-luxury">
-            <div className="text-center">
-              <h2 className="text-display text-foreground mb-6">Our Mission & Vision</h2>
-              <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed mb-12">
-                Our mission is to offer durable, stylish tiles and fixtures that inspire your next project. We envision a future where every home and business in Uganda shines with spaces you love.
-              </p>
-              <h2 className="text-display text-foreground mb-6">Our Values</h2>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div className="p-8">
-                <h3 className="text-heading mb-4">Quality Above All</h3>
-              </div>
-              <div className="p-8">
-                <h3 className="text-heading mb-4">Customer-First Service</h3>
-              </div>
-              <div className="p-8">
-                <h3 className="text-heading mb-4">Integrity & Transparency</h3>
-              </div>
-              <div className="p-8">
-                <h3 className="text-heading mb-4">Sustainable Sourcing</h3>
-              </div>
+            <h2 className="text-display text-foreground mb-16">Our Values</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <ValueCard title="Quality Above All" description="We source only the finest materials, ensuring every product meets rigorous standards for durability and aesthetics." />
+              <ValueCard title="Customer-First Service" description="Your vision is our priority. We provide personalized guidance and support from selection to installation." />
+              <ValueCard title="Local Empowerment" description="We train and employ local craftsmen, sharing advanced tiling and plumbing techniques." />
+              <ValueCard title="Sustainable Sourcing" description="We are committed to eco-friendly practices, from sourcing sustainable materials to minimizing our operational footprint." />
             </div>
           </div>
         </section>
@@ -133,3 +104,16 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+
+function ValueCard({ title, description }: { title: string, description: string }) {
+  return (
+    <div className="card-luxury p-8 text-center">
+      <div className="flex justify-center mb-4">
+        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      </div>
+      <h3 className="text-xl mb-4">{title}</h3>
+      <p className="text-body text-text-secondary">{description}</p>
+    </div>
+  )
+}
