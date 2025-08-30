@@ -219,6 +219,30 @@ const HeroSection = () => {
           </div>
         ))}
       </div>
+
+      {/* Navigation Buttons - Bottom Right */}
+      <div className="absolute bottom-8 right-8 z-30 flex gap-3 hidden md:flex">
+        <button
+          onClick={navigateLeft}
+          disabled={currentSlide === 0}
+          className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Previous slide"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button
+          onClick={navigateRight}
+          disabled={currentSlide === numOfSlides}
+          className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          aria-label="Next slide"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
     </section>
   );
 };
