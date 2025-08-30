@@ -25,9 +25,6 @@ const ProductCtaSection = ({
                     <Link href={ctaLink} className="btn-primary">
                         {ctaText}
                     </Link>
-                    <Link href={ctaLink} className="btn-secondary">
-                        {ctaText}
-                    </Link>
                 </div>
             </div>
         </section>

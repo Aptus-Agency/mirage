@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const CitronelloSection = () => {
+const BackgroudVideoSection = () => {
   return (
     <section className="relative py-32 overflow-hidden h-screen">
       {/* Background Video */}
@@ -31,4 +31,4 @@ const CitronelloSection = () => {
   );
 };
 
-export default CitronelloSection;
+export default BackgroudVideoSection;

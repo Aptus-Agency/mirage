@@ -11,7 +11,7 @@ const accessoryCollections = [
         name: 'Tile Grouts & Sealants',
         description: 'High-quality grouts and sealants to ensure a long-lasting and professional finish for your tile installations.',
         accent: 'Essential for Protection',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560687/mirage/pcu0gbrxkjj7rlvgba3q.jpg',
         features: [
             "Available in a variety of colors to match your tiles",
             "Resistant to stains, mold, and mildew",
@@ -23,7 +23,7 @@ const accessoryCollections = [
         name: 'Edge Trims & Profiles',
         description: 'Give your tile installations a clean, polished look with our range of edge trims and profiles.',
         accent: 'The Perfect Finish',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236050/mirage/fsvhgkpwcyiyjfotr3j7.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236031/mirage/i09yajzne5jvg6wmlzhi.jpg',
         features: [
             "Available in various materials like aluminum, PVC, and stainless steel",
             "Protects tile edges from chipping and damage",
@@ -35,7 +35,7 @@ const accessoryCollections = [
         name: 'Waterproofing Solutions',
         description: 'Protect your home from water damage with our reliable waterproofing solutions for bathrooms, kitchens, and other wet areas.',
         accent: 'Ultimate Protection',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560878/mirage/x7hnvfcddvitocaq9s82.jpg',
         features: [
             "Creates a waterproof barrier behind your tiles",
             "Prevents leaks and moisture damage",
@@ -60,7 +60,7 @@ const AccessoriesPage = () => {
                     />
                     <div className="relative z-10">
                         <h1 className="text-display text-foreground mb-4">Accessories</h1>
-                        <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+                        <p className="text-body text-text-secondary max-w-2xl mx-auto">
                             The finishing touches that make all the difference.
                         </p>
                     </div>
@@ -97,7 +97,7 @@ const AccessoriesPage = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                        <Button>View Collection</Button>
+                                        <Button>Find Your Finish</Button>
                                     </div>
                                 </div>
                             ))}
@@ -106,9 +106,9 @@ const AccessoriesPage = () => {
                 </section>
                 <ProductCtaSection
                     title="Ready to Transform Your Space?"
-                    description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom to see our collections in person or book a free design consultation today."
+                    description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today."
                     ctaText="Book a Consultation"
-                    ctaLink="/contact" />
+                    ctaLink="/contact-us" />
             </main>
             <Footer />
         </>

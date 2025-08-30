@@ -4,13 +4,14 @@ import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
 import Image from 'next/image';
 import Button from '../../../../components/ui/Button';
+import ProductCtaSection from '../../../../components/product-cta-section';
 
 const tileCollections = [
   {
     name: 'Ceramic Tiles',
     description: 'Perfect for floors and walls in living areas, kitchens, and patios.',
     accent: 'Versatile & Stylish',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236050/mirage/fsvhgkpwcyiyjfotr3j7.jpg',
+    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg',
     features: [
       "Suited for indoor applications",
       "Wide range of colors and patterns",
@@ -22,7 +23,7 @@ const tileCollections = [
     name: 'Porcelain Tiles',
     description: 'High durability for heavy-traffic zones and outdoor spaces.',
     accent: 'Durable & Resilient',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg',
+    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756559938/mirage/jjyfnqd33oz6qctnxhmm.jpg',
     features: [
       "Ideal for both indoor and outdoor use",
       "Resistant to stains, scratches, and water",
@@ -34,7 +35,7 @@ const tileCollections = [
     name: 'Natural Stone',
     description: 'Marble, granite, slate—luxury that lasts.',
     accent: 'Elegant & Timeless',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg',
+    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236051/mirage/ekvs8vkbcijizqvv0uxy.jpg',
     features: [
       "Each tile has a unique, natural pattern",
       "Adds significant value to your property",
@@ -46,7 +47,7 @@ const tileCollections = [
     name: 'Mosaic Tiles',
     description: 'Artistic patterns for feature walls and backsplashes.',
     accent: 'Creative & Artistic',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756416003/mirage/lc4oopinxjtqckrltt9s.jpg',
+    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756559878/mirage/p70ovg9ftebolyxguing.jpg',
     features: [
       "Perfect for creating focal points",
       "Available in various materials like glass, ceramic, and stone",
@@ -71,7 +72,7 @@ const TilesPage = () => {
           />
           <div className="relative z-10">
             <h1 className="text-display text-foreground mb-4">Tile Collections</h1>
-            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            <p className="text-body text-text-secondary max-w-2xl mx-auto">
               Discover a world of elegance and durability with our exquisite tile collections.
             </p>
           </div>
@@ -88,6 +89,7 @@ const TilesPage = () => {
                       alt={collection.name}
                       layout="fill"
                       objectFit="cover"
+                      className="hover:scale-110 transition duration-500"
                     />
                   </div>
                   <div className="space-y-6">
@@ -108,13 +110,14 @@ const TilesPage = () => {
                         </div>
                       ))}
                     </div>
-                    <Button>View Collection</Button>
+                    <Button>Start Designing</Button>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
+        <ProductCtaSection title="Ready to Transform Your Space?" description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today." ctaText="Book a Consultation" ctaLink="/contact-us" />
       </main>
       <Footer />
     </>

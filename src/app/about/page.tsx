@@ -3,7 +3,6 @@
 import Navigation from '../../../components/navigation';
 import Footer from '../../../components/footer';
 import Image from 'next/image';
-import Button from '../../../components/ui/Button';
 
 const AboutPage = () => {
   return (
@@ -39,7 +38,7 @@ const AboutPage = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
               <div className="relative h-96 rounded-lg overflow-hidden">
                 <Image
-                  src="https://res.cloudinary.com/zurri-cloud/image/upload/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg"
+                  src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/nisqd2r3jt0zwjlxrpvo.jpg"
                   alt="Vision for Excellence"
                   layout="fill"
                   objectFit="cover"

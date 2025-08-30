@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Button from './ui/Button';
+import Link from 'next/link';
 
 const AboutSection = () => {
   return (
@@ -36,7 +37,9 @@ const AboutSection = () => {
               </p>
             </div>
             
-            <Button>Discover More</Button>
+            <Button>
+              <Link href={"/about"}>Discover More</Link>
+            </Button>
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const fixtureCollections = [
         name: 'Shower Heads',
         description: 'Rainfall, handheld, multi-jet configurations.',
         accent: 'Refreshing & Invigorating',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560324/mirage/vwq7ojigriz3i91byaha.jpg',
         features: [
             "Luxurious rainfall shower heads for a spa-like experience",
             "Versatile handheld options for flexibility",
@@ -23,7 +23,7 @@ const fixtureCollections = [
         name: 'Faucets',
         description: 'Modern and classic designs in chrome, brushed nickel, and matte black.',
         accent: 'Elegant & Functional',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755871559/mirage/ln1zgasvz0rpxfpbwdzb.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560432/mirage/wkjngna4niv2jebfz50p.jpg',
         features: [
             "Available in a variety of finishes to match any decor",
             "Durable construction for long-lasting use",
@@ -35,7 +35,7 @@ const fixtureCollections = [
         name: 'Toilet Seats',
         description: 'Soft-close lids, ergonomic shapes, and quick-release hinges.',
         accent: 'Comfort & Convenience',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236121/mirage/ho4li7tm8yurgrzkacrb.jpg',
+        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560502/mirage/yjh7kk3ss2ooqlthdhka.jpg',
         features: [
             "Soft-close mechanism to prevent slamming",
             "Ergonomically designed for maximum comfort",
@@ -52,7 +52,7 @@ const FixturesPage = () => {
             <main>
                 <section className="relative h-[50vh] bg-background flex items-center justify-center text-center">
                     <Image
-                        src="https://res.cloudinary.com/zurri-cloud/image/upload/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg"
+                        src="https://res.cloudinary.com/zurri-cloud/image/upload/v1756560206/mirage/qr8v48pr8zkuvfultayh.jpg"
                         alt="Bathroom Fixtures Collection"
                         layout="fill"
                         objectFit="cover"
@@ -60,7 +60,7 @@ const FixturesPage = () => {
                     />
                     <div className="relative z-10">
                         <h1 className="text-display text-foreground mb-4">Bathroom Fixtures</h1>
-                        <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+                        <p className="text-body text-text-secondary max-w-2xl mx-auto">
                             Complete your bathroom with our premium selection of fixtures.
                         </p>
                     </div>
@@ -77,6 +77,7 @@ const FixturesPage = () => {
                                             alt={collection.name}
                                             layout="fill"
                                             objectFit="cover"
+                                            className="hover:scale-110 transition duration-500"
                                         />
                                     </div>
                                     <div className="space-y-6">
@@ -97,7 +98,7 @@ const FixturesPage = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                        <Button>View Collection</Button>
+                                        <Button>Shop this Style</Button>
                                     </div>
                                 </div>
                             ))}
@@ -106,9 +107,9 @@ const FixturesPage = () => {
                 </section>
                 <ProductCtaSection
                     title="Ready to Transform Your Space?"
-                    description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom to see our collections in person or book a free design consultation today."
+                    description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today."
                     ctaText="Book a Consultation"
-                    ctaLink="/contact" />
+                    ctaLink="/contact-us" />
             </main>
             <Footer />
         </>
