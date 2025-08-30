@@ -124,10 +124,10 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="hero-slider relative h-screen overflow-hidden select-none cursor-grab active:cursor-grabbing">
+    <section className="hero-slider relative h-[60vh] lg:h-screen overflow-hidden select-none cursor-grab active:cursor-grabbing min-h-[500px]">
       {/* Left Control */}
       <div 
-        className={`slider-control left absolute top-0 left-0 w-[12%] h-full z-20 opacity-0 hover:opacity-100 transition-opacity duration-300 ${
+        className={`slider-control left absolute top-0 left-0 w-[12%] h-full z-20 opacity-0 hover:opacity-100 transition-opacity duration-300 hidden lg:block ${
           currentSlide === 0 ? 'cursor-auto pointer-events-none' : 'cursor-pointer'
         }`}
         style={{
@@ -138,7 +138,7 @@ const HeroSection = () => {
 
       {/* Right Control */}
       <div 
-        className={`slider-control right absolute top-0 right-0 w-[12%] h-full z-20 opacity-0 hover:opacity-100 transition-opacity duration-300 ${
+        className={`slider-control right absolute top-0 right-0 w-[12%] h-full z-20 opacity-0 hover:opacity-100 transition-opacity duration-300 hidden lg:block ${
           currentSlide === numOfSlides ? 'cursor-auto pointer-events-none' : 'cursor-pointer'
         }`}
         style={{
@@ -203,15 +203,15 @@ const HeroSection = () => {
                 index === currentSlide 
                   ? 'opacity-100 transform-none delay-700' 
                   : 'opacity-0 transform -translate-y-1/2'
-              } w-1/4 bottom-[15%] left-[12%] lg:w-1/4 lg:bottom-[15%] lg:left-[12%] lg:transform-none lg:text-left max-lg:left-0 max-lg:bottom-0 max-lg:w-full max-lg:h-80 max-lg:text-center max-lg:transform max-lg:translate-y-1/2 max-lg:px-4`}
+              } w-full px-4 py-8 bottom-0 left-0 text-center lg:w-1/4 lg:bottom-[15%] lg:left-[12%] lg:text-left lg:px-0 lg:py-0`}
               >
-                <h2 className="font-bold text-6xl mb-8">
+                <h2 className="font-bold text-3xl sm:text-4xl lg:text-6xl mb-4 lg:mb-8">
                   {slide.title}
                 </h2>
-                <p className="font-normal text-lg mb-6 max-lg:hidden">
+                <p className="font-normal text-sm sm:text-base lg:text-lg mb-4 lg:mb-6 opacity-90">
                   {slide.description}
                 </p>
-                <Link href={slide.linkUrl} className="btn-primary">
+                <Link href={slide.linkUrl} className="btn-primary inline-block">
                   {slide.linkText}
                 </Link>
               </div>
@@ -221,11 +221,26 @@ const HeroSection = () => {
       </div>
 
       {/* Navigation Buttons - Bottom Right */}
-      <div className="absolute bottom-8 right-8 z-30 flex gap-3 hidden md:flex">
+      <div className="absolute bottom-4 right-4 lg:bottom-8 lg:right-8 z-30 flex gap-2 lg:gap-3">
+        {/* Mobile slide indicators */}
+        <div className="flex gap-2 lg:hidden">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => changeSlide(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-white' : 'bg-white/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+        {/* Desktop navigation buttons */}
+        <div className="hidden lg:flex gap-3">
         <button
           onClick={navigateLeft}
           disabled={currentSlide === 0}
-          className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Previous slide"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -235,13 +250,14 @@ const HeroSection = () => {
         <button
           onClick={navigateRight}
           disabled={currentSlide === numOfSlides}
-          className="w-12 h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-background/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-background/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           aria-label="Next slide"
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M9 18l6-6-6-6"/>
           </svg>
         </button>
+        </div>
       </div>
     </section>
   );
