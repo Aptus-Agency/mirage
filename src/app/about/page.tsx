@@ -12,7 +12,7 @@ const AboutPage = () => {
       <main>
         <section className="section-padding bg-surface pt-32">
           <div className="container-luxury">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16 py-16">
               <h1 className="text-display text-foreground mb-6">About Mirage Tiles Ltd.</h1>
               <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
                 Mirage Tiles Ltd was born from a passion for quality finishes and a vision to elevate interior spaces across Uganda.
@@ -37,6 +37,12 @@ const AboutPage = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
+              <div className='md:order-2'>
+                <h2 className="text-heading text-foreground mb-6">A Vision for Excellence</h2>
+                <p className="text-body text-text-secondary leading-relaxed">
+                  From day one, our guiding principle was simple: source the very best materials from around the globe and pair them with local know-how. We forged partnerships with manufacturers in Italy, Spain, India, and China, hand-selecting each tile based on durability, design, and eco-credentials. Back home, our team of fitters and design consultants began transforming dusty construction sites into gleaming kitchens, patios, and showrooms. Word spread quickly by 2013, we'd moved into our current headquarters in the Industrial Area, complete with a large warehouse and state-of-the-art sample gallery.
+                </p>
+              </div>
               <div className="relative h-96 rounded-lg overflow-hidden">
                 <Image
                   src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/nisqd2r3jt0zwjlxrpvo.jpg"
@@ -44,12 +50,6 @@ const AboutPage = () => {
                   layout="fill"
                   objectFit="cover"
                 />
-              </div>
-              <div>
-                <h2 className="text-heading text-foreground mb-6">A Vision for Excellence</h2>
-                <p className="text-body text-text-secondary leading-relaxed">
-                  From day one, our guiding principle was simple: source the very best materials from around the globe and pair them with local know-how. We forged partnerships with manufacturers in Italy, Spain, India, and China, hand-selecting each tile based on durability, design, and eco-credentials. Back home, our team of fitters and design consultants began transforming dusty construction sites into gleaming kitchens, patios, and showrooms. Word spread quickly by 2013, we'd moved into our current headquarters in the Industrial Area, complete with a large warehouse and state-of-the-art sample gallery.
-                </p>
               </div>
             </div>
           </div>

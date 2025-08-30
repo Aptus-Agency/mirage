@@ -35,7 +35,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-background to-transparent border-border-subtle">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background md:bg-gradient-to-b md:from-background md:to-transparent border-border-subtle">
       <div className="container-luxury">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}

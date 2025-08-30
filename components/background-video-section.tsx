@@ -17,13 +17,13 @@ const BackgroudVideoSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-luxury h-full">
-        <div className='absolute bottom-2 flex flex-row justify-between bg-background/80 rounded-xl p-12'>
-          <div className='w-1/2'>
-            <p className='text-4xl font-display font-medium w-[80%]'>Mirage is the trusted project partner you were looking for</p>
+      <div className="relative z-10 container-luxury h-full mx-auto">
+        <div className='absolute bottom-4 md:bottom-2 flex flex-col md:flex-row justify-between bg-background/80 rounded-xl p-4 md:p-12 gap-4 md:gap-0'>
+          <div className='w-full md:w-1/2'>
+            <p className='text-4xl mb-4 md:mb-0 font-display font-medium'>Mirage is the trusted project partner you were looking for</p>
           </div>
-          <div className='w-1/2'>
-            <p className='text-body text-text-secondary leading-relaxed w-[70%]'>Creativity, reliability and experience: we support your ideas and projects with practical solutions, thanks to a wide range of surfaces for indoor and outdoor design.</p>
+          <div className='w-full md:w-1/2'>
+            <p className='text-body text-text-secondary leading-relaxed'>Creativity, reliability and experience: we support your ideas and projects with practical solutions, thanks to a wide range of surfaces for indoor and outdoor design.</p>
           </div>
         </div>
       </div>
