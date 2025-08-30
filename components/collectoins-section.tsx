@@ -44,7 +44,7 @@ const CollectionsSection = () => {
               Our Ceramic Tile collections
             </h2>
             <p className="text-body text-text-secondary max-w-3xl leading-relaxed">
-              Each collection represents a unique journey through Sicily's geological heritage, 
+              Each collection represents a unique journey through Sicily&apos;s geological heritage, 
               transformed by master craftsmen into surfaces of extraordinary beauty and durability.
             </p>
           </motion.div>

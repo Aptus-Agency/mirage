@@ -38,7 +38,7 @@ const ContactPage = () => {
           <div className="relative z-10">
             <h1 className="text-display text-foreground mb-4">Contact Us</h1>
             <p className="text-body md:text-lg text-text-secondary max-w-2xl mx-auto">
-              We'd love to hear from you. Get in touch with us for any inquiries or to start your next project.
+              We&apos;d love to hear from you. Get in touch with us for any inquiries or to start your next project.
             </p>
           </div>
         </section>

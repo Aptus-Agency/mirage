@@ -43,7 +43,7 @@ const ContactSection = () => {
               </h2>
               <p className="text-xl text-text-secondary mb-12 leading-relaxed">
                 Begin your journey with natural stone. Our artisans are ready to bring 
-                your vision to life with materials that honor Sicily's geological heritage.
+                your vision to life with materials that honor Sicily&apos;s geological heritage.
               </p>
               
               <div className="space-y-8">

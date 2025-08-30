@@ -7,7 +7,6 @@ import {
     TilesSectionContent,
     ShowerHeadsContent,
     ToiletSeatsSectionContent,
-    CollectionsContent
 } from "./parallax-content";
 
 const parallaxSections = [
@@ -84,7 +83,7 @@ export default function ParallaxSection() {
 
     return (
         <div ref={containerRef} className="parallax-container">
-            {parallaxSections.map((section, index) => (
+            {parallaxSections.map((section) => (
                 <section
                     key={section.id}
                     className="parallax-background"

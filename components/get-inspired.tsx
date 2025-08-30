@@ -47,7 +47,7 @@ export default function GetInspiredSection() {
                         viewport={{ once: true, margin: "-100px" }}
                     >
                         <p className='text-heading mb-4'>Kampala hotel lobby project by Mirage Tiles</p>
-                        <p className="text-body text-text-secondary leading-relaxed mb-6 lg:mb-8">Crafted by our Kampala-based team, this hospitality space pairs contemporary design with long‑wear performance. We specified large‑format porcelain with slip‑resistant finishes for high‑traffic areas, warm stone textures in guest zones, and low‑maintenance grout systems—engineered for Uganda's tropical climate. Locally managed from concept to handover, delivered on time and built to last.</p>
+                        <p className="text-body text-text-secondary leading-relaxed mb-6 lg:mb-8">Crafted by our Kampala-based team, this hospitality space pairs contemporary design with long‑wear performance. We specified large‑format porcelain with slip‑resistant finishes for high‑traffic areas, warm stone textures in guest zones, and low‑maintenance grout systems—engineered for Uganda&apos;s tropical climate. Locally managed from concept to handover, delivered on time and built to last.</p>
                         <Button>View Our Gallery</Button>
                     </motion.div>
 

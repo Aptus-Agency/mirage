@@ -46,7 +46,7 @@ const AboutPage = () => {
               >
                 <h2 className="text-heading text-foreground mb-6">Humble Beginnings</h2>
                 <p className="text-body text-text-secondary leading-relaxed mb-4">
-                  In 2010, Mirage Tiles Ltd opened its doors in a small showroom off Jinja Road, Kampala, with just three tile patterns and a single plumbing fixtures supplier. Our founder, Grace Nakato, recognized a gap in Uganda's market: homeowners and builders alike struggled to find high-quality, stylish surface finishes paired with dependable bathroom fixtures under one roof. Armed with a dream and a shoestring budget, Grace set out to change the way Ugandans experienced their living and working spaces one tile at a time.
+                  In 2010, Mirage Tiles Ltd opened its doors in a small showroom off Jinja Road, Kampala, with just three tile patterns and a single plumbing fixtures supplier. Our founder, Grace Nakato, recognized a gap in Uganda&apos;s market: homeowners and builders alike struggled to find high-quality, stylish surface finishes paired with dependable bathroom fixtures under one roof. Armed with a dream and a shoestring budget, Grace set out to change the way Ugandans experienced their living and working spaces one tile at a time.
                 </p>
               </motion.div>
               <motion.div 
@@ -81,7 +81,7 @@ const AboutPage = () => {
               >
                 <h2 className="text-heading text-foreground mb-6">A Vision for Excellence</h2>
                 <p className="text-body text-text-secondary leading-relaxed">
-                  From day one, our guiding principle was simple: source the very best materials from around the globe and pair them with local know-how. We forged partnerships with manufacturers in Italy, Spain, India, and China, hand-selecting each tile based on durability, design, and eco-credentials. Back home, our team of fitters and design consultants began transforming dusty construction sites into gleaming kitchens, patios, and showrooms. Word spread quickly by 2013, we'd moved into our current headquarters in the Industrial Area, complete with a large warehouse and state-of-the-art sample gallery.
+                  From day one, our guiding principle was simple: source the very best materials from around the globe and pair them with local know-how. We forged partnerships with manufacturers in Italy, Spain, India, and China, hand-selecting each tile based on durability, design, and eco-credentials. Back home, our team of fitters and design consultants began transforming dusty construction sites into gleaming kitchens, patios, and showrooms. Word spread quickly by 2013, we&apos;d moved into our current headquarters in the Industrial Area, complete with a large warehouse and state-of-the-art sample gallery.
                 </p>
               </motion.div>
               <motion.div 
@@ -129,7 +129,7 @@ const AboutPage = () => {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              Mirage Tiles is more than a supplier—we're active participants in Uganda's building renaissance.
+              Mirage Tiles is more than a supplier—we are active participants in Uganda&apos;s building renaissance.
             </motion.p>
             <div className="grid md:grid-cols-3 gap-8">
               <motion.div 

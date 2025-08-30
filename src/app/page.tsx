@@ -8,8 +8,6 @@ import CollectionsSection from "../../components/collectoins-section";
 import ContactSection from "../../components/contact-section";
 import Footer from "../../components/footer";
 import ShapeYourIdeas from "../../components/shape-your-ideas";
-import Image from "next/image";
-import Button from "../../components/ui/Button";
 import GetInspiredSection from "../../components/get-inspired";
 
 export default function Home() {
