@@ -5,6 +5,7 @@ import Footer from '../../../../components/footer';
 import Image from 'next/image';
 import Button from '../../../../components/ui/Button';
 import ProductCtaSection from '../../../../components/product-cta-section';
+import { motion } from 'framer-motion';
 
 const accessoryCollections = [
     {
@@ -50,7 +51,13 @@ const AccessoriesPage = () => {
         <>
             <Navigation />
             <main>
-                <section className="relative h-[50vh] bg-background flex items-center justify-center text-center">
+                <motion.section 
+                    className="relative h-[50vh] bg-background flex items-center justify-center text-center"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <Image
                         src="https://res.cloudinary.com/zurri-cloud/image/upload/v1756416003/mirage/lc4oopinxjtqckrltt9s.jpg"
                         alt="Accessories Collection"
@@ -58,28 +65,59 @@ const AccessoriesPage = () => {
                         objectFit="cover"
                         className="opacity-20"
                     />
-                    <div className="relative z-10">
+                    <motion.div 
+                        className="relative z-10"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                    >
                         <h1 className="text-display text-foreground mb-4">Accessories</h1>
                         <p className="text-body text-text-secondary max-w-2xl mx-auto">
                             The finishing touches that make all the difference.
                         </p>
-                    </div>
-                </section>
+                    </motion.div>
+                </motion.section>
 
-                <section className="section-padding bg-surface">
+                <motion.section 
+                    className="section-padding bg-surface"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                >
                     <div className="container-luxury">
                         <div className="grid gap-16">
                             {accessoryCollections.map((collection, index) => (
-                                <div key={index} className="grid lg:grid-cols-2 gap-16 items-center">
-                                    <div className={`relative h-[500px] rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
+                                <motion.div 
+                                    key={index} 
+                                    className="grid lg:grid-cols-2 gap-16 items-center"
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                >
+                                    <motion.div 
+                                        className={`relative h-[500px] rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-last' : ''}`}
+                                        initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: index * 0.2 + 0.2, ease: "easeOut" }}
+                                        viewport={{ once: true, margin: "-100px" }}
+                                    >
                                         <Image
                                             src={collection.imageUrl}
                                             alt={collection.name}
                                             layout="fill"
                                             objectFit="cover"
                                         />
-                                    </div>
-                                    <div className="space-y-6">
+                                    </motion.div>
+                                    <motion.div 
+                                        className="space-y-6"
+                                        initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.8, delay: index * 0.2 + 0.4, ease: "easeOut" }}
+                                        viewport={{ once: true, margin: "-100px" }}
+                                    >
                                         <div>
                                             <span className="text-small text-gold uppercase tracking-widest font-medium">
                                                 {collection.accent}
@@ -98,12 +136,12 @@ const AccessoriesPage = () => {
                                             ))}
                                         </div>
                                         <Button>Find Your Finish</Button>
-                                    </div>
-                                </div>
+                                    </motion.div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>
-                </section>
+                </motion.section>
                 <ProductCtaSection
                     title="Ready to Transform Your Space?"
                     description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today."
