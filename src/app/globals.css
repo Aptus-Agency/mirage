@@ -1,5 +1,4 @@
 @import "tailwindcss";
-/* @import "app.css"; */
 
 :root {
   /* Premium Dark Theme */
@@ -18,6 +17,8 @@
   --mirage-red: 355 96% 43%;
   --mirage-red-muted: 356 76% 37%;
   --mirage-pink: 356 82% 74%;
+  --mirage-blue-muted: 207 32% 25%;
+  --mirage-blue: 212 84% 19%;
 
   /* Interactive States */
   --hover: 25 15% 18%;
@@ -47,9 +48,9 @@
 }
 
 @theme inline {
-  --color-background: hsl(var(--background));
+  --color-background: hsl(var(--mirage-blue-muted));
   --color-foreground: hsl(var(--foreground));
-  --color-surface: hsl(var(--surface));
+  --color-surface: hsl(var(--mirage-blue));
   --color-surface-elevated: hsl(var(--surface-elevated));
   --color-gold: hsl(var(--gold));
   --color-gold-muted: hsl(var(--gold-muted));
@@ -159,7 +160,7 @@
 
   /* Card Styles */
   .card-luxury {
-    @apply bg-surface border border-border rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 shadow-card hover:shadow-luxury;
+    @apply bg-surface border border-gold/30 rounded-lg overflow-hidden hover:border-gold transition-all duration-500 shadow-card hover:shadow-luxury;
   }
 
   /* Image Overlays */
