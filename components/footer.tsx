@@ -1,35 +1,51 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
     {
-      title: "Collections",
+      title: "Tile Collections",
       links: [
-        "Sicilian Stone",
-        "Volcanic Series",
-        "Artisan Collection",
-        "Custom Projects"
-      ]
-    },
-    {
-      title: "Services",
-      links: [
-        "Design Consultation",
-        "Installation",
-        "Maintenance",
-        "Restoration"
+        {
+          name: "Ceramic Tiles",
+          href: "/products/tiles"
+        },
+        {
+          name: "Porcelain Tiles",
+          href: "/products/tiles"
+        },
+        {
+          name: "Natural Stone",
+          href: "/products/tiles"
+        },
+        {
+          name: "Mosaic Tiles",
+          href: "/products/tiles"
+        }
       ]
     },
     {
       title: "Company",
       links: [
-        "About Us",
-        "Contact Us",
-        "Linked In",
-        "Twitter"
+        {
+          name: "About Us",
+          href: "/about"
+        },
+        {
+          name: "Contact Us",
+          href: "/contact-us"
+        },
+        {
+          name: "LinkedIn",
+          href: "https://www.linkedin.com/company/mirage-tiles-uganda/"
+        },
+        {
+          name: "Twitter",
+          href: "https://x.com/miragetilesltd"
+        }
       ]
     }
   ];
@@ -37,9 +53,9 @@ const Footer = () => {
   return (
     <footer className="bg-surface border-t border-border-subtle">
       <div className="container-luxury py-16">
-        <div className="grid lg:grid-cols-4 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12">
           {/* Brand */}
-          <div className="flex flex-col">
+          <div className="flex flex-col md:col-span-2">
             <Link href="/" className="bg-white p-2 rounded-full relative overflow-hidden w-20 h-20 mb-8">
               <Image
                 src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
@@ -61,16 +77,49 @@ const Footer = () => {
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
-                      href="#"
+                      href={link.href}
                       className="text-body text-text-secondary hover:text-foreground transition-colors duration-300"
                     >
-                      {link}
+                      {link.name}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+
+          <div>
+            <h3 className="text-subheading mb-6">Contact Us</h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
+                >
+                  <span><Icon icon="mdi:location" className="w-5 h-5" /></span>
+                  Plot 23, Industrial Area, Kampala
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
+                >
+                  <span><Icon icon="mdi:phone" className="w-5 h-5" /></span>
+                  +256 712 345 678
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
+                >
+                  <span><Icon icon="mdi:email" className="w-5 h-5" /></span>
+                  info@miragetiles.com
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}

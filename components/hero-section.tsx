@@ -28,7 +28,7 @@ const slides: Slide[] = [
     title: "Ceramic Tiles",
     description: "Transform your spaces with tiles that redefine elegance, functionality, and durability.",
     linkText: "Explore Collections",
-    linkUrl: "/#collections",
+    linkUrl: "/collection/ceramic-tiles",
     bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
     overlayColor: "rgb(225, 204, 174)"
   },

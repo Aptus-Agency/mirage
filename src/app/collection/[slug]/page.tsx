@@ -5,7 +5,7 @@ import Navigation from "../../../../components/navigation";
 import { Icon } from "@iconify/react";
 import Footer from "../../../../components/footer";
 import { useParams } from "next/navigation";
-import { ceramics, naturalstones, porcelains, tileCollections } from "@/lib/data";
+import { ceramics, naturalstones, porcelains, tileCollections, catalogues } from "@/lib/data";
 import { motion } from "framer-motion";
 
 const ArtisanCollection = () => {
@@ -17,6 +17,11 @@ const ArtisanCollection = () => {
     }
 
     const products = slug === 'ceramic-tiles' ? ceramics : slug === 'porcelain-tiles' ? porcelains : naturalstones;
+    const catalogue = catalogues.find((catalogue) => catalogue.product === slug);
+
+    if (!catalogue) {
+        return <div className="min-h-screen bg-background text-secondary">Catalogue not found</div>;
+    }
 
     return (
         <div className="min-h-screen bg-background">
@@ -116,7 +121,7 @@ const ArtisanCollection = () => {
                         </p>
                     </motion.div>
                     <motion.div
-                        className="basis-1/4 flex justify-center"
+                        className="basis-1/4 flex flex-col gap-4 justify-center"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -124,6 +129,9 @@ const ArtisanCollection = () => {
                     >
                         <Link href="/contact-us" className="btn-primary">
                             Get in Touch
+                        </Link>
+                        <Link href={catalogue.file} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                            Download Full Catalogue
                         </Link>
                     </motion.div>
                 </motion.div>
