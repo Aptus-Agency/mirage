@@ -1,4 +1,5 @@
 @import "tailwindcss";
+/* @import "app.css"; */
 
 :root {
 
@@ -25,8 +26,6 @@
   --mirage-red: 355 96% 43%;
   --mirage-red-muted: 356 76% 37%;
   --mirage-pink: 356 82% 74%;
-  --mirage-blue-muted: 207 32% 25%;
-  --mirage-blue: 212 84% 19%;
 
   /* Interactive States */
   --hover: 25 15% 18%;
@@ -56,9 +55,9 @@
 }
 
 @theme inline {
-  --color-background: hsl(var(--mirage-blue-muted));
+  --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  --color-surface: hsl(var(--mirage-blue));
+  --color-surface: hsl(var(--surface));
   --color-surface-elevated: hsl(var(--surface-elevated));
   --color-gold: hsl(var(--gold));
   --color-gold-muted: hsl(var(--gold-muted));
