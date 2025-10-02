@@ -2,11 +2,19 @@
 /* @import "app.css"; */
 
 :root {
+
+  /* New Color Theme */
+  --background: 198 96% 8%;
+  --foreground: 0 0% 95%;
+  --surface: 204 96% 18%;
+  --surface-elevated: 204 94% 28%;
+  --accent: 16 58% 51%;
+
   /* Premium Dark Theme */
-  --background: 25 8% 8%;
+  /* --background: 25 8% 8%;
   --foreground: 30 15% 95%;
   --surface: 25 10% 12%;
-  --surface-elevated: 25 12% 15%;
+  --surface-elevated: 25 12% 15%; */
 
   /* Luxury Accents */
   --gold: 45 85% 65%;
@@ -159,7 +167,7 @@
 
   /* Card Styles */
   .card-luxury {
-    @apply bg-surface border border-border rounded-lg overflow-hidden hover:border-gold/30 transition-all duration-500 shadow-card hover:shadow-luxury;
+    @apply bg-surface border rounded-lg overflow-hidden border-gold/30 transition-all duration-500 shadow-card hover:shadow-luxury;
   }
 
   /* Image Overlays */

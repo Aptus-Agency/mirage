@@ -52,7 +52,7 @@ const AccessoriesPage = () => {
             <Navigation />
             <main>
                 <motion.section 
-                    className="relative h-[50vh] bg-background flex items-center justify-center text-center"
+                    className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

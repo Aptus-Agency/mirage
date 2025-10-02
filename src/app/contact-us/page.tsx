@@ -27,7 +27,7 @@ const ContactPage = () => {
     <>
       <Navigation />
       <main>
-        <section className="relative h-[50vh] bg-background flex items-center justify-center text-center">
+        <section className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16">
           <Image
             src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg"
             alt="Contact Us"
@@ -82,7 +82,7 @@ const ContactPage = () => {
                       </label>
                       <input
                         type="text"
-                        className="w-full bg-transparent border border-border focus:border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
+                        className="w-full bg-transparent border border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
                       />
                     </div>
                     <div>
@@ -91,7 +91,7 @@ const ContactPage = () => {
                       </label>
                       <input
                         type="text"
-                        className="w-full bg-transparent border border-border focus:border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
+                        className="w-full bg-transparent border border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
                       />
                     </div>
                   </div>
@@ -102,7 +102,7 @@ const ContactPage = () => {
                     </label>
                     <input
                       type="email"
-                      className="w-full bg-transparent border border-border focus:border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
+                      className="w-full bg-transparent border border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 rounded-md"
                     />
                   </div>
 
@@ -112,7 +112,7 @@ const ContactPage = () => {
                     </label>
                     <textarea
                       rows={5}
-                      className="w-full bg-transparent border border-border focus:border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 resize-none rounded-md"
+                      className="w-full bg-transparent border border-gold outline-none px-4 py-3 text-foreground transition-colors duration-300 resize-none rounded-md"
                       placeholder="Send in an order, or request..."
                     />
                   </div>

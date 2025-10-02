@@ -78,7 +78,7 @@ const Navigation = () => {
                           <motion.div key={subItem.label} variants={dropdownItemVariants}>
                             <Link
                               href={subItem.href}
-                              className="block px-4 py-2 text-text-secondary hover:text-foreground hover:bg-hover rounded-md transition-colors duration-200"
+                              className="block px-4 py-2 text-text-secondary hover:text-foreground rounded-md transition-colors duration-200"
                             >
                               {subItem.label}
                             </Link>

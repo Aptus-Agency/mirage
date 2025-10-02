@@ -84,9 +84,11 @@ const CollectionsSection = () => {
                     ))}
                   </div>
                   
-                  <button className="btn-secondary">
-                    View Collection
-                  </button>
+                  <a href="/products/tiles">
+                    <button className="btn-secondary">
+                      View Collection
+                    </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
