@@ -2,69 +2,19 @@
 
 import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
-import Image from 'next/image';
 import Button from '../../../../components/ui/Button';
 import ProductCtaSection from '../../../../components/product-cta-section';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-
-const tileCollections = [
-  {
-    name: 'Ceramic Tiles',
-    description: 'Perfect for floors and walls in living areas, kitchens, and patios.',
-    accent: 'Versatile & Stylish',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg',
-    features: [
-      "Suited for indoor applications",
-      "Wide range of colors and patterns",
-      "Easy to clean and maintain",
-      "Cost-effective solution",
-    ],
-  },
-  {
-    name: 'Porcelain Tiles',
-    description: 'High durability for heavy-traffic zones and outdoor spaces.',
-    accent: 'Durable & Resilient',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756559938/mirage/jjyfnqd33oz6qctnxhmm.jpg',
-    features: [
-      "Ideal for both indoor and outdoor use",
-      "Resistant to stains, scratches, and water",
-      "Available in various finishes like matte, gloss, and wood-look",
-      "Low maintenance",
-    ],
-  },
-  {
-    name: 'Natural Stone',
-    description: 'Marble, granite, slate—luxury that lasts.',
-    accent: 'Elegant & Timeless',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1755236051/mirage/ekvs8vkbcijizqvv0uxy.jpg',
-    features: [
-      "Each tile has a unique, natural pattern",
-      "Adds significant value to your property",
-      "Extremely durable and long-lasting",
-      "Includes marble, granite, and slate options",
-    ],
-  },
-  {
-    name: 'Mosaic Tiles',
-    description: 'Artistic patterns for feature walls and backsplashes.',
-    accent: 'Creative & Artistic',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756559878/mirage/p70ovg9ftebolyxguing.jpg',
-    features: [
-      "Perfect for creating focal points",
-      "Available in various materials like glass, ceramic, and stone",
-      "Ideal for backsplashes, bathrooms, and accent walls",
-      "Endless design possibilities",
-    ],
-  },
-];
+import { tileCollections } from '@/lib/data';
 
 const TilesPage = () => {
   return (
     <>
       <Navigation />
       <main>
-        <motion.section 
-          className="relative h-[50vh] bg-background flex items-center justify-center text-center"
+        <motion.section
+          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -77,7 +27,7 @@ const TilesPage = () => {
             objectFit="cover"
             className="opacity-20"
           />
-          <motion.div 
+          <motion.div
             className="relative z-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +40,7 @@ const TilesPage = () => {
           </motion.div>
         </motion.section>
 
-        <motion.section 
+        <motion.section
           className="section-padding bg-surface"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,15 +51,15 @@ const TilesPage = () => {
           <div className="container-luxury">
             <div className="grid gap-16">
               {tileCollections.map((collection, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="grid lg:grid-cols-2 gap-16 items-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <motion.div 
+                  <motion.div
                     className={`relative h-[500px] rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-last' : ''}`}
                     initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -124,7 +74,7 @@ const TilesPage = () => {
                       className="hover:scale-110 transition duration-500"
                     />
                   </motion.div>
-                  <motion.div 
+                  <motion.div
                     className="space-y-6"
                     initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -148,7 +98,9 @@ const TilesPage = () => {
                         </div>
                       ))}
                     </div>
-                    <Button>Start Designing</Button>
+                    <a href={`/collection/${collection.slug}`}>
+                    <Button>View Collection</Button>
+                    </a>
                   </motion.div>
                 </motion.div>
               ))}

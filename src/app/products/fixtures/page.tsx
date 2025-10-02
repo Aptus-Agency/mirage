@@ -4,55 +4,22 @@ import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
 import Image from 'next/image';
 import Button from '../../../../components/ui/Button';
-import ProductCtaSection from '../../../../components/product-cta-section';
 import { motion } from 'framer-motion';
-
-const fixtureCollections = [
-    {
-        name: 'Shower Heads',
-        description: 'Rainfall, handheld, multi-jet configurations.',
-        accent: 'Refreshing & Invigorating',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560324/mirage/vwq7ojigriz3i91byaha.jpg',
-        features: [
-            "Luxurious rainfall shower heads for a spa-like experience",
-            "Versatile handheld options for flexibility",
-            "Advanced multi-jet systems with various spray patterns",
-            "Water-efficient designs without compromising performance",
-        ],
-    },
-    {
-        name: 'Faucets',
-        description: 'Modern and classic designs in chrome, brushed nickel, and matte black.',
-        accent: 'Elegant & Functional',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560432/mirage/wkjngna4niv2jebfz50p.jpg',
-        features: [
-            "Available in a variety of finishes to match any decor",
-            "Durable construction for long-lasting use",
-            "Easy-to-use single-handle and double-handle designs",
-            "Sensor-activated faucets for a touchless experience",
-        ],
-    },
-    {
-        name: 'Toilet Seats',
-        description: 'Soft-close lids, ergonomic shapes, and quick-release hinges.',
-        accent: 'Comfort & Convenience',
-        imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560502/mirage/yjh7kk3ss2ooqlthdhka.jpg',
-        features: [
-            "Soft-close mechanism to prevent slamming",
-            "Ergonomically designed for maximum comfort",
-            "Quick-release hinges for easy cleaning",
-            "Made from high-quality, durable materials",
-        ],
-    },
-];
+import Link from 'next/link';
+import { catalogues, fixtureCollections } from '@/lib/data';
 
 const FixturesPage = () => {
+    const catalogue = catalogues.find((catalogue) => catalogue.product === 'fixtures');
+
+    if (!catalogue) {
+        return <div className="flex items-center justify-center h-screen">Catalogue not found</div>
+    }
     return (
         <>
             <Navigation />
             <main>
-                <motion.section 
-                    className="relative h-[50vh] bg-background flex items-center justify-center text-center"
+                <motion.section
+                    className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -65,7 +32,7 @@ const FixturesPage = () => {
                         objectFit="cover"
                         className="opacity-20"
                     />
-                    <motion.div 
+                    <motion.div
                         className="relative z-10"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -78,7 +45,7 @@ const FixturesPage = () => {
                     </motion.div>
                 </motion.section>
 
-                <motion.section 
+                <motion.section
                     className="section-padding bg-surface"
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -89,15 +56,15 @@ const FixturesPage = () => {
                     <div className="container-luxury">
                         <div className="grid gap-16">
                             {fixtureCollections.map((collection, index) => (
-                                <motion.div 
-                                    key={index} 
+                                <motion.div
+                                    key={index}
                                     className="grid lg:grid-cols-2 gap-16 items-center"
                                     initial={{ opacity: 0, y: 30 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
                                     viewport={{ once: true, margin: "-100px" }}
                                 >
-                                    <motion.div 
+                                    <motion.div
                                         className={`relative h-[500px] rounded-lg overflow-hidden ${index % 2 === 1 ? 'lg:order-last' : ''}`}
                                         initial={{ opacity: 0, x: index % 2 === 1 ? 50 : -50 }}
                                         whileInView={{ opacity: 1, x: 0 }}
@@ -112,7 +79,7 @@ const FixturesPage = () => {
                                             className="hover:scale-110 transition duration-500"
                                         />
                                     </motion.div>
-                                    <motion.div 
+                                    <motion.div
                                         className="space-y-6"
                                         initial={{ opacity: 0, x: index % 2 === 1 ? -50 : 50 }}
                                         whileInView={{ opacity: 1, x: 0 }}
@@ -143,11 +110,52 @@ const FixturesPage = () => {
                         </div>
                     </div>
                 </motion.section>
-                <ProductCtaSection
-                    title="Ready to Transform Your Space?"
-                    description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today."
-                    ctaText="Book a Consultation"
-                    ctaLink="/contact-us" />
+                {/* CTA Section */}
+                <motion.section
+                    className="section-padding bg-background mx-4 md:mx-0"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                >
+                    <motion.div
+                        className="container-luxury bg-surface p-6 md:p-16 rounded-2xl flex flex-col md:flex-row justify-between gap-4 items-center"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                        viewport={{ once: true, margin: "-100px" }}
+                    >
+                        <motion.div
+                            className="basis-3/4"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            <h2 className="text-2xl md:text-4xl mb-6">
+                                Ready to Transform Your Space?
+                            </h2>
+                            <p className="text-lg leading-relaxed mb-12 text-text-secondary">
+                                Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today.
+                            </p>
+                        </motion.div>
+                        <motion.div
+                            className="basis-1/4 flex flex-col gap-4 justify-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            <Link href="/contact-us" className="btn-primary">
+                                Get in Touch
+                            </Link>
+                            <Link href={catalogue.file} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                                Download Full Catalogue
+                            </Link>
+                        </motion.div>
+                    </motion.div>
+                </motion.section>
             </main>
             <Footer />
         </>
