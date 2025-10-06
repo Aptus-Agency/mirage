@@ -181,6 +181,9 @@ const HeroSection = () => {
             
             {/* Content */}
             <div className="slide-content absolute top-0 left-0 w-full h-full">
+              {/* Mobile Dark Overlay - ADDED THIS DIV */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent lg:hidden" />
+
               {/* SVG Overlay */}
               <svg 
                 className={`slide-overlay absolute bottom-0 left-0 h-full min-h-[810px] transition-all duration-500 will-change-transform ${

@@ -31,13 +31,13 @@ const BackgroudVideoSection = () => {
 
       {/* Content */}
       <motion.div 
-        className="relative z-10 container-luxury h-full mx-auto"
+        className="relative z-10 container-luxury h-full mx-auto flex items-end"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className='absolute bottom-4 md:bottom-2 flex flex-col md:flex-row justify-between bg-background/80 rounded-xl p-4 md:p-12 gap-4 md:gap-0'>
+        <div className='w-full mb-4 md:mb-2 flex flex-col md:flex-row justify-between bg-background/80 rounded-xl p-4 md:p-12 gap-4 md:gap-0'>
           <div className='w-full md:w-1/2'>
             <p className='text-4xl mb-4 md:mb-0 font-display font-medium'>Mirage is the trusted project partner you were looking for</p>
           </div>
