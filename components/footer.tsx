@@ -97,21 +97,21 @@ const Footer = () => {
                   className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
                 >
                   <span><Icon icon="mdi:location" className="w-5 h-5" /></span>
-                  Plot 23, Industrial Area, Kampala
+                  Hardware City, Mulwana Rd, Kampala
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="tel:+256700386458"
                   className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
                 >
                   <span><Icon icon="mdi:phone" className="w-5 h-5" /></span>
-                  +256 712 345 678
+                  0700 386458 / 0754 434566
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:info@miragetiles.com"
                   className="text-body text-text-secondary hover:text-foreground transition-colors duration-300 inline-flex items-center gap-2"
                 >
                   <span><Icon icon="mdi:email" className="w-5 h-5" /></span>

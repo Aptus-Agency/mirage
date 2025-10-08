@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 export default function TimelineSection() {
   const milestones = [
     {
-      year: "2014",
+      year: "2005",
       description: "Launched our first nationwide tile-sample delivery service.",
       position: "top"
     },

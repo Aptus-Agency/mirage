@@ -13,13 +13,13 @@ const ContactPage = () => {
     },
     {
       label: "Phone",
-      value: "+256 712 345 678",
-      href: "tel:+256712345678"
+      value: "0700 386458 / 0754 434566",
+      href: "tel:+256700386458"
     },
     {
       label: "Address",
-      value: "Plot 23, Industrial Area, Kampala",
-      href: "#"
+      value: "Hardware City, Mulwana Rd, Kampala",
+      href: "https://maps.app.goo.gl/ne3Dboem7eWJadXV8"
     }
   ];
 
