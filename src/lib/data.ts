@@ -87,7 +87,7 @@ export const tileCollections: TileCollection[] = [
     slug: 'ceramic-tiles',
     description: 'Perfect for floors and walls in living areas, kitchens, and patios.',
     accent: 'Versatile & Stylish',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759441744/mirage/tiles/kzp83m0d1uvj12jhryaz.jpg',
+    imageUrl: '/v1759441744/mirage/tiles/kzp83m0d1uvj12jhryaz.jpg',
     features: [
       "Suited for indoor applications",
       "Wide range of colors and patterns",
@@ -100,7 +100,7 @@ export const tileCollections: TileCollection[] = [
     slug: 'porcelain-tiles',
     description: 'High durability for heavy-traffic zones and outdoor spaces.',
     accent: 'Durable & Resilient',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756559938/mirage/jjyfnqd33oz6qctnxhmm.jpg',
+    imageUrl: '/v1756559938/mirage/jjyfnqd33oz6qctnxhmm.jpg',
     features: [
       "Ideal for both indoor and outdoor use",
       "Resistant to stains, scratches, and water",
@@ -113,7 +113,7 @@ export const tileCollections: TileCollection[] = [
     slug: 'natural-stone',
     description: 'Marble, granite, slate—luxury that lasts.',
     accent: 'Elegant & Timeless',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759441741/mirage/tiles/rty6rgnwigytdhmmr5yb.jpg',
+    imageUrl: '/v1759441741/mirage/tiles/rty6rgnwigytdhmmr5yb.jpg',
     features: [
       "Each tile has a unique, natural pattern",
       "Adds significant value to your property",
@@ -126,7 +126,7 @@ export const tileCollections: TileCollection[] = [
     slug: 'mosaic-tiles',
     description: 'Artistic patterns for feature walls and backsplashes.',
     accent: 'Creative & Artistic',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1759441743/mirage/tiles/hbdvmsbywphhddgxlhhg.jpg',
+    imageUrl: '/v1759441743/mirage/tiles/hbdvmsbywphhddgxlhhg.jpg',
     features: [
       "Perfect for creating focal points",
       "Available in various materials like glass, ceramic, and stone",
@@ -141,7 +141,7 @@ export const fixtureCollections = [
     name: 'Shower Heads',
     description: 'Rainfall, handheld, multi-jet configurations.',
     accent: 'Refreshing & Invigorating',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560324/mirage/vwq7ojigriz3i91byaha.jpg',
+    imageUrl: '/v1756560324/mirage/vwq7ojigriz3i91byaha.jpg',
     features: [
       "Luxurious rainfall shower heads for a spa-like experience",
       "Versatile handheld options for flexibility",
@@ -153,7 +153,7 @@ export const fixtureCollections = [
     name: 'Faucets',
     description: 'Modern and classic designs in chrome, brushed nickel, and matte black.',
     accent: 'Elegant & Functional',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560432/mirage/wkjngna4niv2jebfz50p.jpg',
+    imageUrl: '/v1756560432/mirage/wkjngna4niv2jebfz50p.jpg',
     features: [
       "Available in a variety of finishes to match any decor",
       "Durable construction for long-lasting use",
@@ -165,7 +165,7 @@ export const fixtureCollections = [
     name: 'Toilet Seats',
     description: 'Soft-close lids, ergonomic shapes, and quick-release hinges.',
     accent: 'Comfort & Convenience',
-    imageUrl: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756560502/mirage/yjh7kk3ss2ooqlthdhka.jpg',
+    imageUrl: '/v1756560502/mirage/yjh7kk3ss2ooqlthdhka.jpg',
     features: [
       "Soft-close mechanism to prevent slamming",
       "Ergonomically designed for maximum comfort",

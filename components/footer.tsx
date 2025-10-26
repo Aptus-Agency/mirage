@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import imageLoader from "@/lib/imageLoader";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -57,11 +58,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="flex flex-col md:col-span-2">
             <Link href="/" className="bg-white p-2 rounded-full relative overflow-hidden w-20 h-20 mb-8">
-              <Image
-                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
+              <img
+                src={imageLoader({ src: '/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png', width: 100 })}
                 alt="Logo"
-                fill
-                className="object-contain"
+                width={100}
+                height={100}
+                className="object-contain w-full h-full"
               />
             </Link>
             <p className="text-body text-text-secondary leading-relaxed mb-8">

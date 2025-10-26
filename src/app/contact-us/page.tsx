@@ -3,6 +3,7 @@
 import Navigation from '../../../components/navigation';
 import Footer from '../../../components/footer';
 import Image from 'next/image';
+import imageLoader from '@/lib/imageLoader';
 
 const ContactPage = () => {
   const contactInfo = [
@@ -28,12 +29,12 @@ const ContactPage = () => {
       <Navigation />
       <main>
         <section className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16">
-          <Image
-            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg"
+          <img
+            src={imageLoader({ src: '/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg', width: 1000 })}
             alt="Contact Us"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
+            width={1000}
+            height={1000}
+            className="object-cover w-full h-full opacity-20"
           />
           <div className="relative z-10">
             <h1 className="text-display text-foreground mb-4">Contact Us</h1>

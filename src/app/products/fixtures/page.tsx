@@ -2,11 +2,11 @@
 
 import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
-import Image from 'next/image';
 import Button from '../../../../components/ui/Button';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { catalogues, fixtureCollections } from '@/lib/data';
+import imageLoader from '@/lib/imageLoader';
 
 const FixturesPage = () => {
     const catalogue = catalogues.find((catalogue) => catalogue.product === 'fixtures');
@@ -25,12 +25,12 @@ const FixturesPage = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <Image
-                        src="https://res.cloudinary.com/zurri-cloud/image/upload/v1756560206/mirage/qr8v48pr8zkuvfultayh.jpg"
+                    <img
+                        src={imageLoader({ src: '/v1756560206/mirage/qr8v48pr8zkuvfultayh.jpg', width: 1000 })}
                         alt="Bathroom Fixtures Collection"
-                        layout="fill"
-                        objectFit="cover"
-                        className="opacity-20"
+                        width={1000}
+                        height={1000}
+                        className="object-cover w-full h-full opacity-20"
                     />
                     <motion.div
                         className="relative z-10"
@@ -71,11 +71,11 @@ const FixturesPage = () => {
                                         transition={{ duration: 0.8, delay: index * 0.2 + 0.2, ease: "easeOut" }}
                                         viewport={{ once: true, margin: "-100px" }}
                                     >
-                                        <Image
-                                            src={collection.imageUrl}
+                                        <img
+                                            src={imageLoader({ src: collection.imageUrl, width: 1000 })}
                                             alt={collection.name}
-                                            layout="fill"
-                                            objectFit="cover"
+                                            width={1000}
+                                            height={1000}
                                             className="hover:scale-110 transition duration-500"
                                         />
                                     </motion.div>

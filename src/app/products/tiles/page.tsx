@@ -4,9 +4,9 @@ import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
 import Button from '../../../../components/ui/Button';
 import ProductCtaSection from '../../../../components/product-cta-section';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { tileCollections } from '@/lib/data';
+import imageLoader from '@/lib/imageLoader';
 
 const TilesPage = () => {
   return (
@@ -20,12 +20,12 @@ const TilesPage = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Image
-            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg"
+          <img
+            src={imageLoader({ src: '/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg', width: 1000 })}
             alt="Tiles Collection"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
+            width={1000}
+            height={1000}
+            className="object-cover w-full h-full opacity-20"
           />
           <motion.div
             className="relative z-10"
@@ -66,11 +66,11 @@ const TilesPage = () => {
                     transition={{ duration: 0.8, delay: index * 0.2 + 0.2, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <Image
-                      src={collection.imageUrl}
+                    <img
+                      src={imageLoader({ src: collection.imageUrl, width: 1000 })}
                       alt={collection.name}
-                      layout="fill"
-                      objectFit="cover"
+                      width={1000}
+                      height={1000}
                       className="hover:scale-110 transition duration-500"
                     />
                   </motion.div>
@@ -99,7 +99,7 @@ const TilesPage = () => {
                       ))}
                     </div>
                     <a href={`/collection/${collection.slug}`}>
-                    <Button>View Collection</Button>
+                      <Button>View Collection</Button>
                     </a>
                   </motion.div>
                 </motion.div>

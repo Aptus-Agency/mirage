@@ -1,24 +1,24 @@
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import imageLoader from '@/lib/imageLoader';
 
 const ShapeYourIdeas = () => {
   const inspirationItems = [
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg',
+      image: '/v1756415938/mirage/jgfps6lvslbgfzlbocrk.jpg',
       title: "Indoor & Outdoor",
       description: "Modern comfort meets natural beauty",
       accents: "Hotels, residential buildings, offices, co-working spaces or public spaces: the Mirage indoor and outdoor tile collections create instantly impressive, quality settings",
       alt: "Modern luxury living room with natural stone feature wall"
     },
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg',
+      image: '/v1756415873/mirage/ru7c92fn9yn3aev16kix.jpg',
       title: "Flooring Solutions",
       description: "Seamless durability, timeless warmth",
       accents: "Explore a versatile range of porcelain and stone-look tiles engineered for high-traffic commercial and residential floors. Our solutions deliver lasting durability without compromising on sophisticated design.",
       alt: "Elegant bedroom with natural stone headboard"
     },
     {
-      image: 'https://res.cloudinary.com/zurri-cloud/image/upload/v1756416003/mirage/lc4oopinxjtqckrltt9s.jpg',
+      image: '/v1756416003/mirage/lc4oopinxjtqckrltt9s.jpg',
       title: "Bathrooms",
       description: "Where gastronomy and design unite",
       accents: "100% Bathroom solutions for every space; Sophisticated design, durable performance, and timeless appeal.",
@@ -66,8 +66,8 @@ const ShapeYourIdeas = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <div className="relative overflow-hidden rounded-lg mb-6">
-                <Image
-                  src={item.image}
+                <img
+                  src={imageLoader({ src: item.image, width: 1000 })}
                   alt={item.alt}
                   width={1000}
                   height={1000}

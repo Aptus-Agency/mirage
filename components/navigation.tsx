@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import imageLoader from '@/lib/imageLoader';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,11 +41,12 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-4">
             <Link href="/" className="bg-white p-2 rounded-ful relative overflow-hidden w-12 h-12 md:w-20 md:h-20">
-              <Image
-                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
+              <img
+                src={imageLoader({ src: '/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png', width: 100 })}
                 alt="Logo"
-                fill
-                className="object-contain"
+                width={100}
+                height={100}
+                className="object-contain w-full h-full"
               />
             </Link>
 

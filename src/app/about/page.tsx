@@ -6,6 +6,7 @@ import Footer from '../../../components/footer';
 import { motion } from 'framer-motion';
 import { Timeline } from '../../../components/timeline-section';
 import { milestones } from '@/lib/data';
+import imageLoader from '@/lib/imageLoader';
 
 const AboutPage = () => {
   return (
@@ -60,11 +61,12 @@ const AboutPage = () => {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <Image
-                  src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755871559/mirage/ln1zgasvz0rpxfpbwdzb.jpg"
+                <img
+                  src={imageLoader({ src: '/v1755871559/mirage/ln1zgasvz0rpxfpbwdzb.jpg', width: 1000 })}
                   alt="Humble beginnings of Mirage Tiles"
-                  layout="fill"
-                  objectFit="cover"
+                  width={1000}
+                  height={1000}
+                  className="object-cover w-full h-full"
                 />
               </motion.div>
             </motion.div>
@@ -95,11 +97,12 @@ const AboutPage = () => {
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <Image
-                  src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/nisqd2r3jt0zwjlxrpvo.jpg"
+                <img
+                  src={imageLoader({ src: '/v1755236005/mirage/nisqd2r3jt0zwjlxrpvo.jpg', width: 1000 })}
                   alt="Vision for Excellence"
-                  layout="fill"
-                  objectFit="cover"
+                  width={1000}
+                  height={1000}
+                  className="object-cover w-full h-full"
                 />
               </motion.div>
             </motion.div>
