@@ -9,26 +9,32 @@ import { tileCollections } from '@/lib/data';
 import imageLoader from '@/lib/imageLoader';
 
 const TilesPage = () => {
+  const heroImageUrl = imageLoader({ src: '/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg', width: 1920 });
+
   return (
     <>
       <Navigation />
       <main>
+        {/* --- REFACTORED HERO SECTION --- */}
         <motion.section
-          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16"
+          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <img
-            src={imageLoader({ src: '/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg', width: 1000 })}
-            alt="Tiles Collection"
-            width={1000}
-            height={1000}
-            className="object-cover w-full h-full opacity-20"
+          {/* Background Image Div */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-20"
+            style={{
+              backgroundImage: `url(${heroImageUrl})`,
+              backgroundRepeat: 'no-repeat',
+            }}
           />
+
+          {/* Centered Text Content */}
           <motion.div
-            className="relative z-10"
+            className="relative z-10 px-6" // Added padding for mobile
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -39,6 +45,7 @@ const TilesPage = () => {
             </p>
           </motion.div>
         </motion.section>
+        {/* --- END REFACTORED HERO SECTION --- */}
 
         <motion.section
           className="section-padding bg-surface"

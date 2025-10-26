@@ -1,15 +1,20 @@
-'use client'
-
 import Link from "next/link";
 import Navigation from "../../../../components/navigation";
 import { Icon } from "@iconify/react";
 import Footer from "../../../../components/footer";
-import { useParams } from "next/navigation";
 import { ceramics, naturalstones, porcelains, tileCollections, catalogues } from "@/lib/data";
 import { motion } from "framer-motion";
 
-const ArtisanCollection = () => {
-    const { slug } = useParams();
+export const generateStaticParams = () => {
+    return tileCollections.map((collection) => ({ slug: collection.slug }));
+}
+
+export const ArtisanCollection = async ({
+    params,
+}: {
+    params: Promise<{ slug: string }>
+}) => {
+    const { slug } = await params;
     const collection = tileCollections.find((collection) => collection.slug === slug);
 
     if (!collection) {
@@ -141,5 +146,3 @@ const ArtisanCollection = () => {
         </div>
     );
 };
-
-export default ArtisanCollection;
