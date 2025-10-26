@@ -9,8 +9,8 @@ export default function TimelineSection() {
       position: "top"
     },
     {
-      year: "2016", 
-      description: "Expanded our product line to include luxury bathroom fixtures.",
+      year: "2016",
+      description: "Expanded Product line.",
       position: "bottom"
     },
     {
@@ -19,14 +19,34 @@ export default function TimelineSection() {
       position: "top"
     },
     {
-      year: "2021",
-      description: "Opened a second showroom in Entebbe.",
+      year: "2020",
+      description: "Expanded our services to Mulwana Road on a large Scale.",
+      position: "bottom"
+    },
+    {
+      year: "2022",
+      description: "Introduced our Bonanza setup were items are heavily discounted to our customers and wholesale stock clearance in October.",
+      position: "bottom"
+    },
+    {
+      year: "2023",
+      description: "Our business expanded with the introduction of new products from Spain and opening new stores.",
+      position: "bottom"
+    },
+    {
+      year: "2024",
+      description: "Opened up one of the best show rooms in East and Central Africa on Mulwana Road",
+      position: "bottom"
+    },
+    {
+      year: "2025",
+      description: "We have consolidated our business to serve our clients better.",
       position: "bottom"
     }
   ];
 
   return (
-    <motion.section 
+    <motion.section
       className="section-padding bg-background"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +55,7 @@ export default function TimelineSection() {
       viewport={{ once: true, margin: "-100px" }}
     >
       <div className="container-luxury">
-        <motion.h2 
+        <motion.h2
           className="text-display text-center text-foreground mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,8 +64,8 @@ export default function TimelineSection() {
         >
           Milestones on Our Journey
         </motion.h2>
-        
-        <motion.div 
+
+        <motion.div
           className="relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -53,16 +73,16 @@ export default function TimelineSection() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Timeline line */}
-          <motion.div 
+          <motion.div
             className="absolute top-1/2 left-0 w-full h-0.5 bg-gold transform -translate-y-1/2 hidden lg:block"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
             viewport={{ once: true, margin: "-100px" }}
           />
-          
+
           {/* Mobile timeline line */}
-          <motion.div 
+          <motion.div
             className="absolute left-6 top-0 bottom-0 w-0.5 bg-gold lg:hidden"
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
@@ -70,12 +90,12 @@ export default function TimelineSection() {
             viewport={{ once: true, margin: "-100px" }}
             style={{ transformOrigin: "top" }}
           />
-          
+
           {/* Desktop layout */}
           <div className="hidden lg:grid lg:grid-cols-4 gap-8">
             {milestones.map((milestone, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="relative"
                 initial={{ opacity: 0, y: milestone.position === 'top' ? -30 : 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +104,7 @@ export default function TimelineSection() {
               >
                 {/* Timeline dot */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gold rounded-full border-4 border-background z-10"></div>
-                
+
                 {/* Content positioned above or below the line */}
                 <div className={`${milestone.position === 'top' ? 'pb-16' : 'pt-16'} text-center`}>
                   <div className={`p-6 border border-border-subtle rounded-lg bg-surface hover:bg-surface-elevated transition-all duration-300 ${milestone.position === 'bottom' ? 'mt-8' : 'mb-8'}`}>
@@ -95,12 +115,12 @@ export default function TimelineSection() {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Mobile layout */}
           <div className="lg:hidden space-y-8">
             {milestones.map((milestone, index) => (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="relative pl-16"
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -109,7 +129,7 @@ export default function TimelineSection() {
               >
                 {/* Timeline dot */}
                 <div className="absolute left-6 top-6 transform -translate-x-1/2 w-3 h-3 bg-gold rounded-full border-2 border-background"></div>
-                
+
                 {/* Content */}
                 <div className="p-6 border border-border-subtle rounded-lg bg-surface">
                   <h3 className="text-heading text-gold mb-4">{milestone.year}</h3>

@@ -21,7 +21,7 @@ const Navigation = () => {
       ]
     },
     { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact-us' },
+    { label: 'Contact Us', href: '/contact-us' },
   ];
 
   const dropdownVariants = {
@@ -39,14 +39,20 @@ const Navigation = () => {
       <div className="container-luxury">
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link href="/" className="bg-white p-2 rounded-full relative overflow-hidden w-24 h-24">
-            <Image
-              src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
-              alt="Logo"
-              fill
-              className="object-contain"
-            />
-          </Link>
+          <div className="flex items-center space-x-4">
+            <Link href="/" className="bg-white p-2 rounded-ful relative overflow-hidden w-12 h-12 md:w-20 md:h-20">
+              <Image
+                src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png"
+                alt="Logo"
+                fill
+                className="object-contain"
+              />
+            </Link>
+
+            <Link href="/" className="text-xl font-bold">
+              Mirage Tiles Uganda
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

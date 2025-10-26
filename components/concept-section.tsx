@@ -47,7 +47,7 @@ const AboutSection = () => {
                 About<span className="font-light"> Mirage</span>
               </h2>
               <p className="text-body text-text-secondary leading-relaxed mb-8">
-                We are a family-run company based in Uganda, with a focus on natural stone and ceramic tiles. 
+                We are a company based in Kampala Uganda, with a focus on natural stone and ceramic tiles. 
                 Our bathroom concepts transform everyday rituals into moments of pure luxury, 
                 where every surface tells a story of craftsmanship and elegance.
               </p>

@@ -44,9 +44,12 @@ const AboutPage = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <h2 className="text-heading text-foreground mb-6">Humble Beginnings</h2>
+                <h2 className="text-heading text-foreground mb-6">Leading African Design</h2>
                 <p className="text-body text-text-secondary leading-relaxed mb-4">
-                  In 2010, Mirage Tiles Ltd opened its doors in a small showroom off Jinja Road, Kampala, with just three tile patterns and a single plumbing fixtures supplier. Our founder, Hajji Abdul Ssentamu, recognized a gap in Uganda&apos;s market: homeowners and builders alike struggled to find high-quality, stylish surface finishes paired with dependable bathroom fixtures under one roof. With a clear dream, Hajji Abdul set out to change the way Ugandans experienced their living and working spaces one tile at a time.
+                  Mirage Tiles started as one of Uganda's top importers of ceramic tiles. We've since grown into a leading African brand known for artistry and creativity. Our passion is transforming spaces, and we've evolved from just importing tiles to creating complete, beautiful flooring solutions that set new trends in design.
+                </p>
+                <p className="text-body text-text-secondary leading-relaxed mb-4">
+                  We now offer a wide variety of high-quality tiles and flooring options for every room, home, or business. Our promise is simple: to provide excellent craftsmanship and innovative designs that our customers love. We are also deeply committed to sustainable practices and supporting our local communities, making us a trusted partner for your next project.
                 </p>
               </motion.div>
               <motion.div 
