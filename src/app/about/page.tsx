@@ -47,7 +47,7 @@ const AboutPage = () => {
               >
                 <h2 className="text-heading text-foreground mb-6">Leading African Design</h2>
                 <p className="text-body text-text-secondary leading-relaxed mb-4">
-                  Mirage Tiles started as one of Uganda's top importers of ceramic tiles. We've since grown into a leading African brand known for artistry and creativity. Our passion is transforming spaces, and we've evolved from just importing tiles to creating complete, beautiful flooring solutions that set new trends in design.
+                  Mirage Tiles started as one of Uganda&apos;s top importers of ceramic tiles. We&apos;ve since grown into a leading African brand known for artistry and creativity. Our passion is transforming spaces, and we&apos;ve evolved from just importing tiles to creating complete, beautiful flooring solutions that set new trends in design.
                 </p>
                 <p className="text-body text-text-secondary leading-relaxed mb-4">
                   We now offer a wide variety of high-quality tiles and flooring options for every room, home, or business. Our promise is simple: to provide excellent craftsmanship and innovative designs that our customers love. We are also deeply committed to sustainable practices and supporting our local communities, making us a trusted partner for your next project.
