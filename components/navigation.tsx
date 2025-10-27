@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import imageLoader from '@/lib/imageLoader';
+import Link from 'next/link';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,7 +52,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <a href="/" className="bg-white p-2 relative overflow-hidden w-12 h-12 md:w-20 md:h-20">
+            <Link href="/" className="bg-white p-2 relative overflow-hidden w-12 h-12 md:w-20 md:h-20">
               <img
                 src={imageLoader({ src: '/v1755855865/mirage/knkjjmaqwzpix9ghn3ma.png', width: 100 })}
                 alt="Logo"
@@ -59,10 +60,10 @@ const Navigation = () => {
                 height={100}
                 className="object-contain w-full h-full"
               />
-            </a>
-            <a href="/" className="text-xl font-bold">
+            </Link>
+            <Link href="/" className="text-xl font-bold">
               Mirage Tiles Uganda
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

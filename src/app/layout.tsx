@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mirage Tiles UG",
-  description: "For all kinds of tiles",
+  description: "The leading tiles company in Africa",
 };
 
 export default function RootLayout({

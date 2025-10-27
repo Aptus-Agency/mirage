@@ -10,9 +10,9 @@ export const generateStaticParams = () => {
 export default async function ArtisanCollectionPage({
     params,
 }: {
-    params: { slug: string }
+    params: Promise<{ slug: string }>
 }) {
-    const { slug } = params;
+    const { slug } = await params;
     const collection = tileCollections.find((collection) => collection.slug === slug);
 
     if (!collection) {
