@@ -60,7 +60,7 @@ const HeroSection = () => {
 
   const numOfSlides = slides.length - 1;
   const animTime = 500;
-  const autoSlideDelay = 6000;
+  const autoSlideDelay = 3000;
 
   const changeSlide = useCallback((slideIndex: number, instant = false) => {
     if (isAnimating) return;

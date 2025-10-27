@@ -145,7 +145,7 @@ const ContactPage = () => {
 
         <section className="h-[50vh] bg-background">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.757322474443!2d32.6144813147541!3d0.3142699997445763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb87a5555555%3A0x15f7bac7f688e5e!2sIndustrial%20Area%2C%20Kampala!5e0!3m2!1sen!2sug!4v1662556942735!5m2!1sen!2sug"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838.7433617994279!2d32.61349126897555!3d0.3142913057003377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb8a14193dd5%3A0x6a56f2511af261e1!2sMirage%20Tiles%20Ltd!5e0!3m2!1sen!2sug!4v1761592513895!5m2!1sen!2sug"
             width="100%"
             height="100%"
             style={{ border: 0 }}
