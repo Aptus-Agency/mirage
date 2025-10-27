@@ -21,7 +21,6 @@ export default function Home() {
       <GetInspiredSection />
       <ShapeYourIdeas />
       <CollectionsSection />
-      {/* <ContactSection /> */}
       <ProductCtaSection title="Ready to Transform Your Space?" description="Struggling to visualize your project? Our design experts are here to help. Visit our showroom in Bugolobi to see our collections in person or book a free design consultation today." ctaText="Book a Consultation" ctaLink="/contact-us" />
       <Footer />
     </>

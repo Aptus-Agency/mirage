@@ -4,31 +4,37 @@ import Navigation from '../../../../components/navigation';
 import Footer from '../../../../components/footer';
 import Button from '../../../../components/ui/Button';
 import ProductCtaSection from '../../../../components/product-cta-section';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { tileCollections } from '@/lib/data';
+import imageLoader from '@/lib/imageLoader';
 
 const TilesPage = () => {
+  const heroImageUrl = imageLoader({ src: '/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg', width: 1920 });
+
   return (
     <>
       <Navigation />
       <main>
+        {/* --- REFACTORED HERO SECTION --- */}
         <motion.section
-          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16"
+          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <Image
-            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236079/mirage/gucfvsjsuee7rho3wymh.jpg"
-            alt="Tiles Collection"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
+          {/* Background Image Div */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-20"
+            style={{
+              backgroundImage: `url(${heroImageUrl})`,
+              backgroundRepeat: 'no-repeat',
+            }}
           />
+
+          {/* Centered Text Content */}
           <motion.div
-            className="relative z-10"
+            className="relative z-10 px-6" // Added padding for mobile
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -39,6 +45,7 @@ const TilesPage = () => {
             </p>
           </motion.div>
         </motion.section>
+        {/* --- END REFACTORED HERO SECTION --- */}
 
         <motion.section
           className="section-padding bg-surface"
@@ -66,11 +73,11 @@ const TilesPage = () => {
                     transition={{ duration: 0.8, delay: index * 0.2 + 0.2, ease: "easeOut" }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    <Image
-                      src={collection.imageUrl}
+                    <img
+                      src={imageLoader({ src: collection.imageUrl, width: 1000 })}
                       alt={collection.name}
-                      layout="fill"
-                      objectFit="cover"
+                      width={1000}
+                      height={1000}
                       className="hover:scale-110 transition duration-500"
                     />
                   </motion.div>
@@ -99,7 +106,7 @@ const TilesPage = () => {
                       ))}
                     </div>
                     <a href={`/collection/${collection.slug}`}>
-                    <Button>View Collection</Button>
+                      <Button>View Collection</Button>
                     </a>
                   </motion.div>
                 </motion.div>

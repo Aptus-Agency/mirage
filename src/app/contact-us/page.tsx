@@ -2,9 +2,11 @@
 
 import Navigation from '../../../components/navigation';
 import Footer from '../../../components/footer';
-import Image from 'next/image';
+import imageLoader from '@/lib/imageLoader';
+import { motion } from 'framer-motion';
 
 const ContactPage = () => {
+  const heroImageUrl = imageLoader({ src: '/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg', width: 1920 });
   const contactInfo = [
     {
       label: "Email",
@@ -27,21 +29,36 @@ const ContactPage = () => {
     <>
       <Navigation />
       <main>
-        <section className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16">
-          <Image
-            src="https://res.cloudinary.com/zurri-cloud/image/upload/v1755236122/mirage/fv7qgb3ihskuxhus2mkm.jpg"
-            alt="Contact Us"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
+
+        <motion.section
+          className="relative h-[50vh] bg-background flex items-center justify-center text-center mt-16 overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Background Image Div */}
+          <div
+            className="absolute inset-0 w-full h-full bg-cover bg-center opacity-20"
+            style={{
+              backgroundImage: `url(${heroImageUrl})`,
+              backgroundRepeat: 'no-repeat',
+            }}
           />
-          <div className="relative z-10">
+
+          {/* Centered Text Content */}
+          <motion.div
+            className="relative z-10 px-6" // Added padding for mobile
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          >
             <h1 className="text-display text-foreground mb-4">Contact Us</h1>
-            <p className="text-body md:text-lg text-text-secondary max-w-2xl mx-auto">
+            <p className="text-body text-text-secondary max-w-2xl mx-auto">
               We&apos;d love to hear from you. Get in touch with us for any inquiries or to start your next project.
             </p>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
 
         <section className="section-padding bg-surface">
           <div className="container-luxury">

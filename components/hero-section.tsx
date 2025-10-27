@@ -20,7 +20,7 @@ const slides: Slide[] = [
     description: "Transform your space with our exquisite collection of ceramic tiles. From modern minimalist designs to classic patterns, find the perfect tiles for every room.",
     linkText: "About Us",
     linkUrl: "/about",
-    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
+    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1756559878/mirage/p70ovg9ftebolyxguing.jpg",
     overlayColor: "rgb(233, 156, 126)"
   },
   {
@@ -38,7 +38,7 @@ const slides: Slide[] = [
     description: "Elevate your bathing experience with our premium shower heads.",
     linkText: "Explore Products",
     linkUrl: "/products/fixtures",
-    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
+    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1756560324/mirage/vwq7ojigriz3i91byaha.jpg",
     overlayColor: "rgb(173, 197, 205)"
   },
   {
@@ -47,7 +47,7 @@ const slides: Slide[] = [
     description: "Elevate your bathing experience with our premium shower heads.",
     linkText: "Explore Products",
     linkUrl: "/products/fixtures",
-    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236005/mirage/anq5esbmpzvmdq6zpdat.jpg",
+    bgImage: "https://res.cloudinary.com/zurri-cloud/image/upload/v1755236121/mirage/mpifujmr1fappa71iswu.jpg",
     overlayColor: "rgb(203, 198, 195)"
   }
 ];
